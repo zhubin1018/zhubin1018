@@ -1,14 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search>
-  <entry>
-    <title>Redis</title>
-    <url>/2020/03/02/Redis/</url>
-    <content><![CDATA[<h1 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h1><h2 id="NoSql"><a href="#NoSql" class="headerlink" title="NoSql"></a>NoSql</h2>]]></content>
+<search> 
+  
+  
+    
+    <entry>
+      <title>Redis</title>
+      <link href="/2020/03/02/Redis/"/>
+      <url>/2020/03/02/Redis/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h1><h2 id="NoSql"><a href="#NoSql" class="headerlink" title="NoSql"></a>NoSql</h2>]]></content>
+      
+      
       <categories>
-        <category>SQL</category>
+          
+          <category> SQL </category>
+          
       </categories>
-      <tags>
-        <tag>Redis</tag>
-      </tags>
-  </entry>
+      
+      
+        <tags>
+            
+            <tag> Redis </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
 </search>
