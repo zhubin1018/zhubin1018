@@ -3,7 +3,10 @@
   <entry>
     <title>Redis</title>
     <url>/2020/03/02/Redis/</url>
-    <content><![CDATA[<h1 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h1><h2 id="NoSql"><a href="#NoSql" class="headerlink" title="NoSql"></a>NoSql</h2>]]></content>
+    <content><![CDATA[<h1 id="NoSql"><a href="#NoSql" class="headerlink" title="NoSql"></a>NoSql</h1><p>Redis属于NoSql里面的一个具体的技术</p>
+<h2 id="NoSql入门和概述"><a href="#NoSql入门和概述" class="headerlink" title="NoSql入门和概述"></a>NoSql入门和概述</h2><p><strong>入门概述</strong></p>
+<p>在90年代，一个网站的访问量一般都不大，用单个数据库完全可以轻松应付。在那个时候，更多的都是静态网页，动态交互类型的网站不多。</p>
+]]></content>
       <categories>
         <category>SQL</category>
       </categories>
