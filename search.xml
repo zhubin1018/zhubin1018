@@ -3,9 +3,11 @@
   <entry>
     <title>Redis</title>
     <url>/2020/03/02/Redis/</url>
-    <content><![CDATA[<h1 id="NoSql"><a href="#NoSql" class="headerlink" title="NoSql"></a>NoSql</h1><p>Redis属于NoSql里面的一个具体的技术</p>
-<h2 id="NoSql入门和概述"><a href="#NoSql入门和概述" class="headerlink" title="NoSql入门和概述"></a>NoSql入门和概述</h2><p><strong>入门概述</strong></p>
-<p>在90年代，一个网站的访问量一般都不大，用单个数据库完全可以轻松应付。在那个时候，更多的都是静态网页，动态交互类型的网站不多。</p>
+    <content><![CDATA[<h1 id="NoSql"><a href="#NoSql" class="headerlink" title="NoSql"></a>NoSql</h1><p>&#160; &#160; &#160; &#160;Redis属于NoSql里面的一个具体的技术</p>
+<h2 id="NoSql入门和概述"><a href="#NoSql入门和概述" class="headerlink" title="NoSql入门和概述"></a>NoSql入门和概述</h2><p>&#160; &#160;<strong>入门概述</strong></p>
+<p>&#160; &#160; &#160; &#160;在90年代，一个网站的访问量一般都不大，用单个数据库完全可以轻松应付。在那个时候，更多的都是静态网页，动态交互类型的网站不多。随着现在互联网用户剧增, 如果同时大量语句进行, MySQL将无法应付。数据量的剧增,会存在一个机器放不下, 数据的索引也存放不下。</p>
+<a id="more"></a>
+
 ]]></content>
       <categories>
         <category>SQL</category>
