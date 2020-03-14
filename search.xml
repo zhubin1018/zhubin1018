@@ -259,11 +259,13 @@
 <li>接口上添加<code>@Mapper</code></li>
 </ol>
 <p><img src="https://gitee.com/bin1018/MaYunImages/raw/master/img/20200315002913.png" alt=""><br>其中<code>@Options(useGeneratedKeys =true ,keyProperty = &quot;id&quot;)</code>来返回自动递增获取的id值。</p>
-<h1 id="SpringBoot启动配置原理"><a href="#SpringBoot启动配置原理" class="headerlink" title="SpringBoot启动配置原理"></a>SpringBoot启动配置原理</h1><p>Spring Boot启动扫描所有jar包的META-INF/spring.factories中配置的 EnableAutoConfiguration组件</p>
+<h1 id="SpringBoot启动配置原理"><a href="#SpringBoot启动配置原理" class="headerlink" title="SpringBoot启动配置原理"></a>SpringBoot启动配置原理</h1><blockquote>
+<p>Spring Boot启动扫描所有jar包的META-INF/spring.factories中配置的 EnableAutoConfiguration组件</p>
 <p>spring-boot-autoconfigure.jar\META-INF\spring.factories有启动时需要加载的 EnableAutoConfiguration组件配置</p>
 <p>配置文件中使用debug=true可以观看到当前启用的自动配置的信息</p>
 <p>自动配置会为容器中添加大量组件<br>Spring Boot在做任何功能都需要从容器中获取这个功能的组件</p>
 <p>Spring Boot 总是遵循一个标准，容器中有我们自己配置的组件就用我们配置的，没有就用自动配 置默认注册进来的组件</p>
+</blockquote>
 <h1 id="SpringBoot自定义starter"><a href="#SpringBoot自定义starter" class="headerlink" title="SpringBoot自定义starter"></a>SpringBoot自定义starter</h1><p>可参考以下博客：<a href="https://blog.csdn.net/vbirdbest/article/details/79863883" target="_blank" rel="noopener">https://blog.csdn.net/vbirdbest/article/details/79863883</a></p>
 ]]></content>
       <categories>
