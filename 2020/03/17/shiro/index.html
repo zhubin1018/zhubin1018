@@ -21,29 +21,43 @@
     var CONFIG = {"hostname":"bin1018.gitee.io","root":"/","scheme":"Gemini","version":"7.7.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="Knowledge is power">
-<meta property="og:type" content="website">
-<meta property="og:title" content="ZhuBin">
-<meta property="og:url" content="http://bin1018.gitee.io/index.html">
+  <meta name="description" content="Shiro概述Apache Shiro 是Java 的一个安全框架。Shiro 可以非常容易的开发出足够好的应用，其不仅可以用在JavaSE 环境，也可以用在JavaEE 环境。Shiro 可以帮助我们完成：认证、授权、加密、会话管理、与Web 集成、缓存等。 基本功能  Authentication： 身份认证&#x2F;登录，验证用户是不是拥有相应的身份；  Authorization： 授权，即权限验">
+<meta property="og:type" content="article">
+<meta property="og:title" content="shiro">
+<meta property="og:url" content="http://bin1018.gitee.io/2020/03/17/shiro/index.html">
 <meta property="og:site_name" content="ZhuBin">
-<meta property="og:description" content="Knowledge is power">
+<meta property="og:description" content="Shiro概述Apache Shiro 是Java 的一个安全框架。Shiro 可以非常容易的开发出足够好的应用，其不仅可以用在JavaSE 环境，也可以用在JavaEE 环境。Shiro 可以帮助我们完成：认证、授权、加密、会话管理、与Web 集成、缓存等。 基本功能  Authentication： 身份认证&#x2F;登录，验证用户是不是拥有相应的身份；  Authorization： 授权，即权限验">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://gitee.com/bin1018/MaYunImages/raw/master/img/20200317092453.png">
+<meta property="og:image" content="https://gitee.com/bin1018/MaYunImages/raw/master/img/20200317093122.png">
+<meta property="og:image" content="https://gitee.com/bin1018/MaYunImages/raw/master/img/20200317094007.png">
+<meta property="og:image" content="https://gitee.com/bin1018/MaYunImages/raw/master/img/20200317095138.png">
+<meta property="og:image" content="https://gitee.com/bin1018/MaYunImages/raw/master/img/20200317095435.png">
+<meta property="og:image" content="https://gitee.com/bin1018/MaYunImages/raw/master/img/20200317101445.png">
+<meta property="og:image" content="https://gitee.com/bin1018/MaYunImages/raw/master/img/20200317110538.png">
+<meta property="og:image" content="https://gitee.com/bin1018/MaYunImages/raw/master/img/20200317110935.png">
+<meta property="og:image" content="https://gitee.com/bin1018/MaYunImages/raw/master/img/20200317111315.png">
+<meta property="og:image" content="https://gitee.com/bin1018/MaYunImages/raw/master/img/20200317111521.png">
+<meta property="article:published_time" content="2020-03-17T01:22:18.000Z">
+<meta property="article:modified_time" content="2020-03-17T06:34:51.436Z">
 <meta property="article:author" content="朱彬">
+<meta property="article:tag" content="Shiro">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/bin1018/MaYunImages/raw/master/img/20200317092453.png">
 
-<link rel="canonical" href="http://bin1018.gitee.io/">
+<link rel="canonical" href="http://bin1018.gitee.io/2020/03/17/shiro/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false
+    isHome : false,
+    isPost : true
   };
 </script>
 
-  <title>ZhuBin</title>
+  <title>shiro | ZhuBin</title>
   
 
 
@@ -186,10 +200,10 @@
             
 
   <div class="posts-expand">
-        
+      
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://bin1018.gitee.io/2020/03/17/shiro/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -203,8 +217,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/03/17/shiro/" class="post-title-link" itemprop="url">shiro</a>
+          shiro
         </h1>
 
         <div class="post-meta">
@@ -228,6 +241,13 @@
             </span>
 
           
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
   
   <span class="post-meta-item">
     
@@ -266,7 +286,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="Shiro概述"><a href="#Shiro概述" class="headerlink" title="Shiro概述"></a>Shiro概述</h1><p>Apache Shiro 是Java 的一个安全框架。Shiro 可以非常容易的开发出足够好的应用，其不仅可以用在JavaSE 环境，也可以用在JavaEE 环境。Shiro 可以帮助我们完成：认证、授权、加密、会话管理、与Web 集成、缓存等。</p>
+        <h1 id="Shiro概述"><a href="#Shiro概述" class="headerlink" title="Shiro概述"></a>Shiro概述</h1><p>Apache Shiro 是Java 的一个安全框架。Shiro 可以非常容易的开发出足够好的应用，其不仅可以用在JavaSE 环境，也可以用在JavaEE 环境。Shiro 可以帮助我们完成：认证、授权、加密、会话管理、与Web 集成、缓存等。</p>
 <h2 id="基本功能"><a href="#基本功能" class="headerlink" title="基本功能"></a>基本功能</h2><p><img src="https://gitee.com/bin1018/MaYunImages/raw/master/img/20200317092453.png" alt=""></p>
 <ul>
 <li><p><strong>Authentication：</strong> 身份认证/登录，验证用户是不是拥有相应的身份；</p>
@@ -417,466 +437,70 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 创建ShiroFilterFactoryBean</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="meta">@Bean</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> ShiroFilterFactoryBean <span class="title">getShiroFilterFactoryBean</span><span class="params">(@Qualifier(<span class="string">"securityManager"</span>)</span>DefaultWebSecurityManager securityManager)</span>&#123;</span><br><span class="line">		ShiroFilterFactoryBean shiroFilterFactoryBean = <span class="keyword">new</span> ShiroFilterFactoryBean();</span><br><span class="line">		</span><br><span class="line">		<span class="comment">//设置安全管理器</span></span><br><span class="line">		shiroFilterFactoryBean.setSecurityManager(securityManager);</span><br><span class="line">		</span><br><span class="line">		<span class="comment">//添加Shiro内置过滤器</span></span><br><span class="line">		<span class="comment">/**</span></span><br><span class="line"><span class="comment">		 * Shiro内置过滤器，可以实现权限相关的拦截器</span></span><br><span class="line"><span class="comment">		 *    常用的过滤器：</span></span><br><span class="line"><span class="comment">		 *       anon: 无需认证（登录）可以访问</span></span><br><span class="line"><span class="comment">		 *       authc: 必须认证才可以访问</span></span><br><span class="line"><span class="comment">		 *       user: 如果使用rememberMe的功能可以直接访问</span></span><br><span class="line"><span class="comment">		 *       perms： 该资源必须得到资源权限才可以访问</span></span><br><span class="line"><span class="comment">		 *       role: 该资源必须得到角色权限才可以访问</span></span><br><span class="line"><span class="comment">		 */</span></span><br><span class="line">		Map&lt;String,String&gt; filterMap = <span class="keyword">new</span> LinkedHashMap&lt;String,String&gt;();</span><br><span class="line">		<span class="comment">/*filterMap.put("/add", "authc");</span></span><br><span class="line"><span class="comment">		filterMap.put("/update", "authc");*/</span></span><br><span class="line">		</span><br><span class="line">		filterMap.put(<span class="string">"/testThymeleaf"</span>, <span class="string">"anon"</span>);</span><br><span class="line">		<span class="comment">//放行login.html页面</span></span><br><span class="line">		filterMap.put(<span class="string">"/login"</span>, <span class="string">"anon"</span>);</span><br><span class="line">		</span><br><span class="line">		<span class="comment">//授权过滤器</span></span><br><span class="line">		<span class="comment">//注意：当前授权拦截后，shiro会自动跳转到未授权页面</span></span><br><span class="line">		filterMap.put(<span class="string">"/add"</span>, <span class="string">"perms[user:add]"</span>);</span><br><span class="line">		</span><br><span class="line">		filterMap.put(<span class="string">"/*"</span>, <span class="string">"authc"</span>);</span><br><span class="line">		</span><br><span class="line">		<span class="comment">//修改调整的登录页面</span></span><br><span class="line">		shiroFilterFactoryBean.setLoginUrl(<span class="string">"/toLogin"</span>);</span><br><span class="line">		<span class="comment">//设置未授权提示页面</span></span><br><span class="line">		shiroFilterFactoryBean.setUnauthorizedUrl(<span class="string">"/noAuth"</span>);</span><br><span class="line">		</span><br><span class="line">		shiroFilterFactoryBean.setFilterChainDefinitionMap(filterMap);</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">return</span> shiroFilterFactoryBean;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>完成Shiro的资源授权</strong></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">UserRealm：</span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 执行授权逻辑</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">protected</span> AuthorizationInfo <span class="title">doGetAuthorizationInfo</span><span class="params">(PrincipalCollection arg0)</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"执行授权逻辑"</span>);</span><br><span class="line">		</span><br><span class="line">		<span class="comment">//给资源进行授权</span></span><br><span class="line">		SimpleAuthorizationInfo info = <span class="keyword">new</span> SimpleAuthorizationInfo();</span><br><span class="line">		</span><br><span class="line">		<span class="comment">//添加资源的授权字符串</span></span><br><span class="line">		info.addStringPermission(<span class="string">"user:add"</span>);</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">return</span> info;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
-      
     </div>
 <div>
+
+<div>
+
+    <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-handshake-o"></i>感谢您的阅读-------------</div>
+
+</div>
 
 </div>
     
     
     
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://bin1018.gitee.io/2020/03/11/SpringBoot/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://gitee.com/bin1018/MaYunImages/raw/master/img/20200302123325.jpg">
-      <meta itemprop="name" content="朱彬">
-      <meta itemprop="description" content="Knowledge is power">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ZhuBin">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/03/11/SpringBoot/" class="post-title-link" itemprop="url">SpringBoot</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-03-11 09:09:00" itemprop="dateCreated datePublished" datetime="2020-03-11T09:09:00+08:00">2020-03-11</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-03-17 09:20:32" itemprop="dateModified" datetime="2020-03-17T09:20:32+08:00">2020-03-17</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java-%E6%A1%86%E6%9E%B6/" itemprop="url" rel="index"><span itemprop="name">Java 框架</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2020/03/11/SpringBoot/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/03/11/SpringBoot/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>27k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>24 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
+        <div class="reward-container">
+  <div>如果觉得我都文章对您有用，可适度打赏，您的支持将鼓励我继续创作.</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
       
-          <h1 id="SpringBoot入门"><a href="#SpringBoot入门" class="headerlink" title="SpringBoot入门"></a>SpringBoot入门</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p><strong>SpringBoot之前</strong><br>J2EE笨重的开发、繁多的配置、低下的开发效率、 复杂的部署流程、第三方技术集成难度大。</p>
-<p><strong>SpringBoot的优点</strong></p>
-<ol>
-<li>快速创建独立运行的Spring项目以及与主流框架集成</li>
-<li>使用嵌入式的Servlet容器，应用无需打成WAR包</li>
-<li>starters自动依赖与版本控制</li>
-<li>大量的自动配置，简化开发，也可修改默认值</li>
-<li>无需配置XML，无代码生成，开箱即用</li>
-<li>准生产环境的运行时应用监控</li>
-<li>与云计算的天然集成
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/03/11/SpringBoot/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-<div>
+      <div style="display: inline-block;">
+        <img src="https://gitee.com/bin1018/MaYunImages/raw/master/img/20200303131200.png" alt="朱彬 微信支付">
+        <p>微信支付</p>
+      </div>
 
+  </div>
 </div>
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
 
         
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://bin1018.gitee.io/2020/03/06/Nginx/">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://gitee.com/bin1018/MaYunImages/raw/master/img/20200302123325.jpg">
-      <meta itemprop="name" content="朱彬">
-      <meta itemprop="description" content="Knowledge is power">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ZhuBin">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/03/06/Nginx/" class="post-title-link" itemprop="url">Nginx</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-03-06 19:33:46" itemprop="dateCreated datePublished" datetime="2020-03-06T19:33:46+08:00">2020-03-06</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-03-07 00:44:29" itemprop="dateModified" datetime="2020-03-07T00:44:29+08:00">2020-03-07</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Nginx/" itemprop="url" rel="index"><span itemprop="name">Nginx</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2020/03/06/Nginx/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/03/06/Nginx/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>7.5k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>7 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="Nginx简介"><a href="#Nginx简介" class="headerlink" title="Nginx简介"></a>Nginx简介</h1><p>&#160; &#160; &#160; &#160; Nginx (engine x) 是一个高性能的HTTP和反向代理web服务器，同时也提供了IMAP/POP3/SMTP服务。Nginx是由伊戈尔·赛索耶夫为俄罗斯访问量第二的Rambler.ru站点（俄文：Рамблер）开发的，第一个公开版本0.1.0发布于2004年10月4日。<br>&#160; &#160; &#160; &#160; 其将源代码以类BSD许可证的形式发布，因它的稳定性、丰富的功能集、示例配置文件和低系统资源的消耗而闻名。2011年6月1日，nginx 1.0.4发布。<br>&#160; &#160; &#160; &#160; Nginx是一款轻量级的Web 服务器/反向代理服务器及电子邮件（IMAP/POP3）代理服务器，在BSD-like 协议下发行。其特点是占有内存少，并发能力强，事实上nginx的并发能力在同类型的网页服务器中表现较好，中国大陆使用nginx网站用户有：百度、京东、新浪、网易、腾讯、淘宝等。<br>&#160; &#160; &#160; &#160; Nginx专门为性能优化而开发，占内存少，并发能力强，能经受高负载的考验，支持高达50 000个并发连接数。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/03/06/Nginx/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
 <div>
-
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>朱彬
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://bin1018.gitee.io/2020/03/17/shiro/" title="shiro">http://bin1018.gitee.io/2020/03/17/shiro/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
 </div>
-    
-    
-    
+
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
+          <div class="post-tags">
+              <a href="/tags/Shiro/" rel="tag"><i class="fa fa-tag"></i> Shiro</a>
+          </div>
 
         
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://bin1018.gitee.io/2020/03/06/PicGo/">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://gitee.com/bin1018/MaYunImages/raw/master/img/20200302123325.jpg">
-      <meta itemprop="name" content="朱彬">
-      <meta itemprop="description" content="Knowledge is power">
-    </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ZhuBin">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/03/06/PicGo/" class="post-title-link" itemprop="url">PicGo</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-03-06 12:00:32 / 修改时间：13:14:55" itemprop="dateCreated datePublished" datetime="2020-03-06T12:00:32+08:00">2020-03-06</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%9B%BE%E5%BA%8A/" itemprop="url" rel="index"><span itemprop="name">图床</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2020/03/06/PicGo/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/03/06/PicGo/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>804</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>&#160; &#160; &#160; &#160; 对于很多程序员来说都有写博客的习惯，之前一直喜欢用印象笔记来写东西然后发布到自己的CSDN账号。不过发现一个问题，印象笔记生成的图片链接到CSDN上无法使用，显示私密链接。而且很多程序员都有自己的个人博客，对于博客来说不可避免有不少图片，会严重影响博客的加载速度，于是很多程序员都喜欢用图床技术。<br>&#160; &#160; &#160; &#160; 为了解决这个问题，可以把自己图片放到图床上去，这样就可以共用。可以直接在聚合图床：<a href="https://www.superbed.cn" target="_blank" rel="noopener">https://www.superbed.cn</a>，上传自己的图片获得链接。可是有弊端，链接可能会失效，之前阅读别人博客，会发现很多博客图片失效。对于程序员来说博客图片必不可少，若多年前文章中图片链接突然失效，很难恢复，因为自己很难记得这些图的内容了。当然聚合图床的会员可以避免这种情况。很贵，不推荐。求人不如求己，我们可以用github构造一个图床，由于github外网的原因，图片加载会很慢，github能做到的事情码云肯定可以做，说了这么多，现在就讲如何用PicGo+码云来构建自己的图床。所有操作之前先在自己电脑内下载node.js。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/03/06/PicGo/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
         
-      
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/03/11/SpringBoot/" rel="prev" title="SpringBoot">
+      <i class="fa fa-chevron-left"></i> SpringBoot
+    </a></div>
+      <div class="post-nav-item"></div>
     </div>
-<div>
-
-</div>
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
       </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://bin1018.gitee.io/2020/03/02/Redis/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://gitee.com/bin1018/MaYunImages/raw/master/img/20200302123325.jpg">
-      <meta itemprop="name" content="朱彬">
-      <meta itemprop="description" content="Knowledge is power">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ZhuBin">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/03/02/Redis/" class="post-title-link" itemprop="url">Redis</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-03-02 22:30:38" itemprop="dateCreated datePublished" datetime="2020-03-02T22:30:38+08:00">2020-03-02</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-03-05 20:03:04" itemprop="dateModified" datetime="2020-03-05T20:03:04+08:00">2020-03-05</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/NoSql/" itemprop="url" rel="index"><span itemprop="name">NoSql</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
     
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2020/03/02/Redis/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/03/02/Redis/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>19k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>17 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="NoSql"><a href="#NoSql" class="headerlink" title="NoSql"></a>NoSql</h1><p>&#160; &#160; &#160; &#160;Redis属于NoSql里面的一个具体的技术</p>
-<h2 id="NoSql入门和概述"><a href="#NoSql入门和概述" class="headerlink" title="NoSql入门和概述"></a>NoSql入门和概述</h2><p>&#160; &#160;<strong>入门概述</strong></p>
-<p>&#160; &#160; &#160; &#160;在90年代，一个网站的访问量一般都不大，用单个数据库完全可以轻松应付。在那个时候，更多的都是静态网页，动态交互类型的网站不多。随着现在互联网用户剧增, 如果同时大量语句进行, MySQL将无法应付。数据量的剧增,会存在一个机器放不下, 数据的索引也存放不下。同时访问量的增加, MySQL就开始出现性能问题。为了提高性能, 开始利用缓存, 减少MySQL性能消耗。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/03/02/Redis/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-<div>
-
-</div>
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
   </article>
   
   
@@ -884,12 +508,10 @@
 
   </div>
 
-  
-
-
 
           </div>
           
+    <div class="comments" id="valine-comments"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -936,6 +558,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Shiro概述"><span class="nav-number">1.</span> <span class="nav-text">Shiro概述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本功能"><span class="nav-number">1.1.</span> <span class="nav-text">基本功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#架构说明"><span class="nav-number">1.2.</span> <span class="nav-text">架构说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#下载Shiro和maven的依赖"><span class="nav-number">1.3.</span> <span class="nav-text">下载Shiro和maven的依赖</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#【掌握】Shiro-ini文件"><span class="nav-number">2.</span> <span class="nav-text">【掌握】Shiro.ini文件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#main-定义全局变量"><span class="nav-number">2.1.</span> <span class="nav-text">[main] :定义全局变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#users-定义用户名和密码"><span class="nav-number">2.2.</span> <span class="nav-text">[users] :定义用户名和密码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#roles-定义角色"><span class="nav-number">2.3.</span> <span class="nav-text">[roles]: 定义角色</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#urls-定义哪些内置urls生效-在web应用时使用"><span class="nav-number">2.4.</span> <span class="nav-text">[urls] : 定义哪些内置urls生效.在web应用时使用.</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#【掌握】Shiro实现认证-ini"><span class="nav-number">3.</span> <span class="nav-text">【掌握】Shiro实现认证_ini</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本概念"><span class="nav-number">3.1.</span> <span class="nav-text">基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#身份验证"><span class="nav-number">3.1.1.</span> <span class="nav-text">身份验证</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#principals-【-‘prɪnsəpl】"><span class="nav-number">3.1.2.</span> <span class="nav-text">principals 【&#x2F;‘prɪnsəpl】</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#credentials-【-krə’denʃlz-】"><span class="nav-number">3.1.3.</span> <span class="nav-text">credentials 【&#x2F;krə’dɛnʃlz&#x2F;】</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#认证流程"><span class="nav-number">3.2.</span> <span class="nav-text">认证流程</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#【掌握】shiro-ini实现授权"><span class="nav-number">4.</span> <span class="nav-text">【掌握】shiro.ini实现授权</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#授权概述"><span class="nav-number">4.1.</span> <span class="nav-text">授权概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关键对象介绍"><span class="nav-number">4.2.</span> <span class="nav-text">关键对象介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#主体"><span class="nav-number">4.2.1.</span> <span class="nav-text">主体</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#资源"><span class="nav-number">4.2.2.</span> <span class="nav-text">资源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#权限"><span class="nav-number">4.2.3.</span> <span class="nav-text">权限</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#角色"><span class="nav-number">4.2.4.</span> <span class="nav-text">角色</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#授权流程"><span class="nav-number">4.3.</span> <span class="nav-text">授权流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相关方法说明"><span class="nav-number">4.4.</span> <span class="nav-text">相关方法说明</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#高级概述"><span class="nav-number">5.</span> <span class="nav-text">高级概述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SpringBoot与Shiro整合-权限管理实战"><span class="nav-number">6.</span> <span class="nav-text">SpringBoot与Shiro整合-权限管理实战</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#整合"><span class="nav-number">6.1.</span> <span class="nav-text">整合</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现用户认证（登录）操作"><span class="nav-number">6.2.</span> <span class="nav-text">实现用户认证（登录）操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#整合MyBatis实现登录"><span class="nav-number">6.3.</span> <span class="nav-text">整合MyBatis实现登录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Spring-Boot与Shiro整合实现用户授权"><span class="nav-number">6.4.</span> <span class="nav-text">Spring Boot与Shiro整合实现用户授权</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
