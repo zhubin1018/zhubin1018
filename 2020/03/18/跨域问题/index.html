@@ -21,31 +21,22 @@
     var CONFIG = {"hostname":"bin1018.gitee.io","root":"/","scheme":"Gemini","version":"7.7.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="&amp;#160; &amp;#160; &amp;#160; &amp;#160; 对于很多程序员来说都有写博客的习惯，之前一直喜欢用印象笔记来写东西然后发布到自己的CSDN账号。不过发现一个问题，印象笔记生成的图片链接到CSDN上无法使用，显示私密链接。而且很多程序员都有自己的个人博客，对于博客来说不可避免有不少图片，会严重影响博客的加载速度，于是很多程序员都喜欢用图床技术。&amp;#160; &amp;#160; &amp;#160; &amp;#1">
+  <meta name="description" content="对于一个前后端开发项目来说，跨域是再常见不过的问题了 跨域是因为前端项目和接口所在服务器的ip或者端口不同，浏览器认为这样不安全，所以会先发送个options请求“试试水”，options请求就是看你这接口有没有毛病，其他啥也不干，所以后台只需要判断请求类型，只要是options就直接放行即可">
 <meta property="og:type" content="article">
-<meta property="og:title" content="PicGo">
-<meta property="og:url" content="http://bin1018.gitee.io/2020/03/06/PicGo/index.html">
+<meta property="og:title" content="跨域问题">
+<meta property="og:url" content="http://bin1018.gitee.io/2020/03/18/%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98/index.html">
 <meta property="og:site_name" content="ZhuBin">
-<meta property="og:description" content="&amp;#160; &amp;#160; &amp;#160; &amp;#160; 对于很多程序员来说都有写博客的习惯，之前一直喜欢用印象笔记来写东西然后发布到自己的CSDN账号。不过发现一个问题，印象笔记生成的图片链接到CSDN上无法使用，显示私密链接。而且很多程序员都有自己的个人博客，对于博客来说不可避免有不少图片，会严重影响博客的加载速度，于是很多程序员都喜欢用图床技术。&amp;#160; &amp;#160; &amp;#160; &amp;#1">
+<meta property="og:description" content="对于一个前后端开发项目来说，跨域是再常见不过的问题了 跨域是因为前端项目和接口所在服务器的ip或者端口不同，浏览器认为这样不安全，所以会先发送个options请求“试试水”，options请求就是看你这接口有没有毛病，其他啥也不干，所以后台只需要判断请求类型，只要是options就直接放行即可">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://gitee.com/bin1018/MaYunImages/raw/master/img/20200306124226.png">
-<meta property="og:image" content="https://gitee.com/bin1018/MaYunImages/raw/master/img/20200306124604.png">
-<meta property="og:image" content="https://gitee.com/bin1018/MaYunImages/raw/master/img/20200306124907.png">
-<meta property="og:image" content="https://gitee.com/bin1018/MaYunImages/raw/master/img/20200306125059.png">
-<meta property="og:image" content="https://gitee.com/bin1018/MaYunImages/raw/master/img/20200306125309.png">
-<meta property="og:image" content="https://gitee.com/bin1018/MaYunImages/raw/master/img/20200306125412.png">
-<meta property="og:image" content="https://gitee.com/bin1018/MaYunImages/raw/master/img/20200306125716.png">
-<meta property="og:image" content="https://gitee.com/bin1018/MaYunImages/raw/master/img/20200306130704.png">
-<meta property="og:image" content="https://gitee.com/bin1018/MaYunImages/raw/master/img/20200306130902.png">
-<meta property="article:published_time" content="2020-03-06T04:00:32.000Z">
-<meta property="article:modified_time" content="2020-03-06T05:14:55.360Z">
+<meta property="og:image" content="https://gitee.com/bin1018/MaYunImages/raw/master/img/20200318225021.png">
+<meta property="article:published_time" content="2020-03-18T15:07:34.000Z">
+<meta property="article:modified_time" content="2020-03-18T15:08:54.087Z">
 <meta property="article:author" content="朱彬">
-<meta property="article:tag" content="PicGo">
-<meta property="article:tag" content="图床">
+<meta property="article:tag" content="SpringBoot">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://gitee.com/bin1018/MaYunImages/raw/master/img/20200306124226.png">
+<meta name="twitter:image" content="https://gitee.com/bin1018/MaYunImages/raw/master/img/20200318225021.png">
 
-<link rel="canonical" href="http://bin1018.gitee.io/2020/03/06/PicGo/">
+<link rel="canonical" href="http://bin1018.gitee.io/2020/03/18/%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98/">
 
 
 <script id="page-configurations">
@@ -57,7 +48,7 @@
   };
 </script>
 
-  <title>PicGo | ZhuBin</title>
+  <title>跨域问题 | ZhuBin</title>
   
 
 
@@ -204,7 +195,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://bin1018.gitee.io/2020/03/06/PicGo/">
+    <link itemprop="mainEntityOfPage" href="http://bin1018.gitee.io/2020/03/18/%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://gitee.com/bin1018/MaYunImages/raw/master/img/20200302123325.jpg">
@@ -217,7 +208,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          PicGo
+          跨域问题
         </h1>
 
         <div class="post-meta">
@@ -228,7 +219,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-03-06 12:00:32 / 修改时间：13:14:55" itemprop="dateCreated datePublished" datetime="2020-03-06T12:00:32+08:00">2020-03-06</time>
+              <time title="创建时间：2020-03-18 23:07:34 / 修改时间：23:08:54" itemprop="dateCreated datePublished" datetime="2020-03-18T23:07:34+08:00">2020-03-18</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -236,7 +227,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%9B%BE%E5%BA%8A/" itemprop="url" rel="index"><span itemprop="name">图床</span></a>
+                  <a href="/categories/%E8%B8%A9%E5%9D%91/" itemprop="url" rel="index"><span itemprop="name">踩坑</span></a>
                 </span>
             </span>
 
@@ -256,8 +247,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2020/03/06/PicGo/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/03/06/PicGo/" itemprop="commentCount"></span>
+    <a title="valine" href="/2020/03/18/%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/03/18/%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -267,14 +258,14 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>804</span>
+              <span>2.1k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="fa fa-clock-o"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
+              <span>2 分钟</span>
             </span>
 
         </div>
@@ -286,44 +277,30 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>&#160; &#160; &#160; &#160; 对于很多程序员来说都有写博客的习惯，之前一直喜欢用印象笔记来写东西然后发布到自己的CSDN账号。不过发现一个问题，印象笔记生成的图片链接到CSDN上无法使用，显示私密链接。而且很多程序员都有自己的个人博客，对于博客来说不可避免有不少图片，会严重影响博客的加载速度，于是很多程序员都喜欢用图床技术。<br>&#160; &#160; &#160; &#160; 为了解决这个问题，可以把自己图片放到图床上去，这样就可以共用。可以直接在聚合图床：<a href="https://www.superbed.cn" target="_blank" rel="noopener">https://www.superbed.cn</a>，上传自己的图片获得链接。可是有弊端，链接可能会失效，之前阅读别人博客，会发现很多博客图片失效。对于程序员来说博客图片必不可少，若多年前文章中图片链接突然失效，很难恢复，因为自己很难记得这些图的内容了。当然聚合图床的会员可以避免这种情况。很贵，不推荐。求人不如求己，我们可以用github构造一个图床，由于github外网的原因，图片加载会很慢，github能做到的事情码云肯定可以做，说了这么多，现在就讲如何用PicGo+码云来构建自己的图床。所有操作之前先在自己电脑内下载node.js。</p>
+        <p>对于一个前后端开发项目来说，跨域是再常见不过的问题了</p>
+<p>跨域是因为前端项目和接口所在服务器的ip或者端口不同，浏览器认为这样不安全，所以会先发送个options请求“试试水”，options请求就是看你这接口有没有毛病，其他啥也不干，所以后台只需要判断请求类型，只要是options就直接放行即可</p>
 <a id="more"></a>
-
-<ul>
-<li><p>下载PicGo：<a href="https://github.com/Molunerfinn/PicGo" target="_blank" rel="noopener">https://github.com/Molunerfinn/PicGo</a>下载匹配自己电脑的版本，这里我下的Windows版本。<br><img src="https://gitee.com/bin1018/MaYunImages/raw/master/img/20200306124226.png" alt=""></p>
-</li>
-<li><p>在PicGo中搜索gitee插件并安装。<br><img src="https://gitee.com/bin1018/MaYunImages/raw/master/img/20200306124604.png" alt=""></p>
-</li>
-<li><p>在码云中创建一个新厂库来保存图片</p>
-</li>
-</ul>
-<p><img src="https://gitee.com/bin1018/MaYunImages/raw/master/img/20200306124907.png" alt=""></p>
-<ul>
-<li>创建完选择去设置</li>
-</ul>
-<p><img src="https://gitee.com/bin1018/MaYunImages/raw/master/img/20200306125059.png" alt=""></p>
-<ul>
-<li>点击私人令牌</li>
-</ul>
-<p><img src="https://gitee.com/bin1018/MaYunImages/raw/master/img/20200306125309.png" alt=""></p>
-<ul>
-<li>创建新的令牌，后勾选project即可提交</li>
-</ul>
-<p><img src="https://gitee.com/bin1018/MaYunImages/raw/master/img/20200306125412.png" alt=""></p>
-<ul>
-<li>此时会生成一个token注意保存，只会显示一次。</li>
-<li>如下图设置PicGo即可。<br><img src="https://gitee.com/bin1018/MaYunImages/raw/master/img/20200306125716.png" alt=""></li>
-</ul>
-<p>ps；一些坑，在这里使用PicGo作者出现了剪切板上传出现警告，你可能没有，我把我的解决办法奉上：</p>
 <ol>
-<li>找到powershell路径</li>
+<li><strong>同源解决</strong></li>
 </ol>
-<p><img src="https://gitee.com/bin1018/MaYunImages/raw/master/img/20200306130704.png" alt=""></p>
+<p><img src="https://gitee.com/bin1018/MaYunImages/raw/master/img/20200318225021.png" alt=""></p>
 <ol start="2">
-<li>在环境变量中path添加powershell路径已经piggo的相关配置</li>
+<li><strong>重写WebMvcConfigurer（全局跨域）</strong><br>在任意配置类，返回一个新的WebMvcConfigurer Bean，并重写其提供的跨域请求处理的接口，目的是添加映射路径和具体的CORS配置信息。</li>
 </ol>
-<p><img src="https://gitee.com/bin1018/MaYunImages/raw/master/img/20200306130902.png" alt=""></p>
-<p>3.重启电脑，后就可以使用自己的图床了。 </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.bin.system.config;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Bean;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Configuration;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.servlet.config.annotation.CorsRegistry;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.servlet.config.annotation.WebMvcConfigurer;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> 朱彬</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@date</span> 2020/3/18 22:17</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">GlobalCorsConfig</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> WebMvcConfigurer <span class="title">corsConfigurer</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> WebMvcConfigurer() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="comment">//重写父类提供的跨域请求处理的接口</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addCorsMappings</span><span class="params">(CorsRegistry registry)</span> </span>&#123;</span><br><span class="line">                <span class="comment">//添加映射路径</span></span><br><span class="line">                registry.addMapping(<span class="string">"/**"</span>)</span><br><span class="line">                        <span class="comment">//放行哪些原始域</span></span><br><span class="line">                        .allowedOrigins(<span class="string">"*"</span>)</span><br><span class="line">                        <span class="comment">//是否发送Cookie信息</span></span><br><span class="line">                        .allowCredentials(<span class="keyword">true</span>)</span><br><span class="line">                        <span class="comment">//放行哪些原始域(请求方式)</span></span><br><span class="line">                        .allowedMethods(<span class="string">"GET"</span>, <span class="string">"POST"</span>, <span class="string">"PUT"</span>, <span class="string">"DELETE"</span>,<span class="string">"PATCH"</span>)</span><br><span class="line">                        <span class="comment">//放行哪些原始域(头部信息)</span></span><br><span class="line">                        .allowedHeaders(<span class="string">"*"</span>)</span><br><span class="line">                        <span class="comment">//暴露哪些头部信息（因为跨域访问默认不能获取全部头部信息）</span></span><br><span class="line">                        .exposedHeaders(<span class="string">"Header1"</span>, <span class="string">"Header2"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li><p><strong>使用注解（局部跨域）</strong><br>在方法上（@RequestMapping）使用注解 @CrossOrigin ：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@CrossOrigin</span></span><br><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="meta">@RequestMapping</span>(<span class="string">"login"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LoginController</span> </span>&#123;</span><br><span class="line">...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>实现Filter-采用过滤器的方式</strong></p>
+</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"> <span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CORSFilter</span> <span class="keyword">implements</span> <span class="title">Filter</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doFilter</span><span class="params">(ServletRequest request, ServletResponse response, FilterChain chain)</span></span></span><br><span class="line"><span class="function">            <span class="keyword">throws</span> IOException, ServletException </span>&#123;</span><br><span class="line">        HttpServletResponse res = (HttpServletResponse) response;</span><br><span class="line">        res.addHeader(<span class="string">"Access-Control-Allow-Credentials"</span>, <span class="string">"true"</span>);</span><br><span class="line">        res.addHeader(<span class="string">"Access-Control-Allow-Origin"</span>, <span class="string">"*"</span>);</span><br><span class="line">        res.addHeader(<span class="string">"Access-Control-Allow-Methods"</span>, <span class="string">"GET, POST, DELETE, PUT"</span>);</span><br><span class="line">        res.addHeader(<span class="string">"Access-Control-Allow-Headers"</span>, <span class="string">"Content-Type,X-CAF-Authorization-Token,sessionToken,X-TOKEN"</span>);</span><br><span class="line">        <span class="keyword">if</span> (((HttpServletRequest) request).getMethod().equals(<span class="string">"OPTIONS"</span>)) &#123;</span><br><span class="line">            response.getWriter().println(<span class="string">"ok"</span>);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        chain.doFilter(request, response);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">destroy</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">(FilterConfig filterConfig)</span> <span class="keyword">throws</span> ServletException </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="5">
+<li><strong>nginx反向代理</strong></li>
+</ol>
 
     </div>
 <div>
@@ -362,7 +339,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://bin1018.gitee.io/2020/03/06/PicGo/" title="PicGo">http://bin1018.gitee.io/2020/03/06/PicGo/</a>
+    <a href="http://bin1018.gitee.io/2020/03/18/%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98/" title="跨域问题">http://bin1018.gitee.io/2020/03/18/跨域问题/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -373,8 +350,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/PicGo/" rel="tag"><i class="fa fa-tag"></i> PicGo</a>
-              <a href="/tags/%E5%9B%BE%E5%BA%8A/" rel="tag"><i class="fa fa-tag"></i> 图床</a>
+              <a href="/tags/SpringBoot/" rel="tag"><i class="fa fa-tag"></i> SpringBoot</a>
           </div>
 
         
@@ -383,13 +359,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/03/02/Redis/" rel="prev" title="Redis">
-      <i class="fa fa-chevron-left"></i> Redis
+    <a href="/2020/03/17/shiro/" rel="prev" title="shiro">
+      <i class="fa fa-chevron-left"></i> shiro
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2020/03/06/Nginx/" rel="next" title="Nginx">
-      Nginx <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
