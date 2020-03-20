@@ -21,31 +21,21 @@
     var CONFIG = {"hostname":"bin1018.gitee.io","root":"/","scheme":"Gemini","version":"7.7.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="&amp;#160; &amp;#160; &amp;#160; &amp;#160; 对于很多程序员来说都有写博客的习惯，之前一直喜欢用印象笔记来写东西然后发布到自己的CSDN账号。不过发现一个问题，印象笔记生成的图片链接到CSDN上无法使用，显示私密链接。而且很多程序员都有自己的个人博客，对于博客来说不可避免有不少图片，会严重影响博客的加载速度，于是很多程序员都喜欢用图床技术。&amp;#160; &amp;#160; &amp;#160; &amp;#1">
+  <meta name="description" content="一.基本配置配置jdbc.properties外部属性文件1234jdbc.driverClass&#x3D;com.mysql.jdbc.Driverjdbc.url&#x3D;jdbc:mysql:&#x2F;&#x2F;127.0.0.1:3306&#x2F;spring2jdbc.user&#x3D;rootjdbc.password&#x3D;123456 xml文件配置   1&lt;context:component-scan base-package">
 <meta property="og:type" content="article">
-<meta property="og:title" content="PicGo">
-<meta property="og:url" content="http://bin1018.gitee.io/2020/03/06/PicGo/index.html">
+<meta property="og:title" content="spring事务">
+<meta property="og:url" content="http://bin1018.gitee.io/2020/03/20/spring%E4%BA%8B%E5%8A%A1/index.html">
 <meta property="og:site_name" content="ZhuBin">
-<meta property="og:description" content="&amp;#160; &amp;#160; &amp;#160; &amp;#160; 对于很多程序员来说都有写博客的习惯，之前一直喜欢用印象笔记来写东西然后发布到自己的CSDN账号。不过发现一个问题，印象笔记生成的图片链接到CSDN上无法使用，显示私密链接。而且很多程序员都有自己的个人博客，对于博客来说不可避免有不少图片，会严重影响博客的加载速度，于是很多程序员都喜欢用图床技术。&amp;#160; &amp;#160; &amp;#160; &amp;#1">
+<meta property="og:description" content="一.基本配置配置jdbc.properties外部属性文件1234jdbc.driverClass&#x3D;com.mysql.jdbc.Driverjdbc.url&#x3D;jdbc:mysql:&#x2F;&#x2F;127.0.0.1:3306&#x2F;spring2jdbc.user&#x3D;rootjdbc.password&#x3D;123456 xml文件配置   1&lt;context:component-scan base-package">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://gitee.com/bin1018/MaYunImages/raw/master/img/20200306124226.png">
-<meta property="og:image" content="https://gitee.com/bin1018/MaYunImages/raw/master/img/20200306124604.png">
-<meta property="og:image" content="https://gitee.com/bin1018/MaYunImages/raw/master/img/20200306124907.png">
-<meta property="og:image" content="https://gitee.com/bin1018/MaYunImages/raw/master/img/20200306125059.png">
-<meta property="og:image" content="https://gitee.com/bin1018/MaYunImages/raw/master/img/20200306125309.png">
-<meta property="og:image" content="https://gitee.com/bin1018/MaYunImages/raw/master/img/20200306125412.png">
-<meta property="og:image" content="https://gitee.com/bin1018/MaYunImages/raw/master/img/20200306125716.png">
-<meta property="og:image" content="https://gitee.com/bin1018/MaYunImages/raw/master/img/20200306130704.png">
-<meta property="og:image" content="https://gitee.com/bin1018/MaYunImages/raw/master/img/20200306130902.png">
-<meta property="article:published_time" content="2020-03-06T04:00:32.000Z">
-<meta property="article:modified_time" content="2020-03-06T05:14:55.360Z">
+<meta property="article:published_time" content="2020-03-20T04:26:49.000Z">
+<meta property="article:modified_time" content="2020-03-20T05:19:36.518Z">
 <meta property="article:author" content="朱彬">
-<meta property="article:tag" content="PicGo">
-<meta property="article:tag" content="图床">
+<meta property="article:tag" content="Spring">
+<meta property="article:tag" content="数据库">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://gitee.com/bin1018/MaYunImages/raw/master/img/20200306124226.png">
 
-<link rel="canonical" href="http://bin1018.gitee.io/2020/03/06/PicGo/">
+<link rel="canonical" href="http://bin1018.gitee.io/2020/03/20/spring%E4%BA%8B%E5%8A%A1/">
 
 
 <script id="page-configurations">
@@ -57,7 +47,7 @@
   };
 </script>
 
-  <title>PicGo | ZhuBin</title>
+  <title>spring事务 | ZhuBin</title>
   
 
 
@@ -204,7 +194,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://bin1018.gitee.io/2020/03/06/PicGo/">
+    <link itemprop="mainEntityOfPage" href="http://bin1018.gitee.io/2020/03/20/spring%E4%BA%8B%E5%8A%A1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://gitee.com/bin1018/MaYunImages/raw/master/img/20200302123325.jpg">
@@ -217,7 +207,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          PicGo
+          spring事务
         </h1>
 
         <div class="post-meta">
@@ -228,7 +218,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-03-06 12:00:32 / 修改时间：13:14:55" itemprop="dateCreated datePublished" datetime="2020-03-06T12:00:32+08:00">2020-03-06</time>
+              <time title="创建时间：2020-03-20 12:26:49 / 修改时间：13:19:36" itemprop="dateCreated datePublished" datetime="2020-03-20T12:26:49+08:00">2020-03-20</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -236,7 +226,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%9B%BE%E5%BA%8A/" itemprop="url" rel="index"><span itemprop="name">图床</span></a>
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">数据库</span></a>
                 </span>
             </span>
 
@@ -256,8 +246,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2020/03/06/PicGo/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/03/06/PicGo/" itemprop="commentCount"></span>
+    <a title="valine" href="/2020/03/20/spring%E4%BA%8B%E5%8A%A1/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/03/20/spring%E4%BA%8B%E5%8A%A1/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -267,14 +257,14 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>804</span>
+              <span>3.2k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="fa fa-clock-o"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
+              <span>3 分钟</span>
             </span>
 
         </div>
@@ -286,44 +276,114 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>&#160; &#160; &#160; &#160; 对于很多程序员来说都有写博客的习惯，之前一直喜欢用印象笔记来写东西然后发布到自己的CSDN账号。不过发现一个问题，印象笔记生成的图片链接到CSDN上无法使用，显示私密链接。而且很多程序员都有自己的个人博客，对于博客来说不可避免有不少图片，会严重影响博客的加载速度，于是很多程序员都喜欢用图床技术。<br>&#160; &#160; &#160; &#160; 为了解决这个问题，可以把自己图片放到图床上去，这样就可以共用。可以直接在聚合图床：<a href="https://www.superbed.cn" target="_blank" rel="noopener">https://www.superbed.cn</a>，上传自己的图片获得链接。可是有弊端，链接可能会失效，之前阅读别人博客，会发现很多博客图片失效。对于程序员来说博客图片必不可少，若多年前文章中图片链接突然失效，很难恢复，因为自己很难记得这些图的内容了。当然聚合图床的会员可以避免这种情况。很贵，不推荐。求人不如求己，我们可以用github构造一个图床，由于github外网的原因，图片加载会很慢，github能做到的事情码云肯定可以做，说了这么多，现在就讲如何用PicGo+码云来构建自己的图床。所有操作之前先在自己电脑内下载node.js。</p>
-<a id="more"></a>
+        <h1 id="一-基本配置"><a href="#一-基本配置" class="headerlink" title="一.基本配置"></a>一.基本配置</h1><h2 id="配置jdbc-properties外部属性文件"><a href="#配置jdbc-properties外部属性文件" class="headerlink" title="配置jdbc.properties外部属性文件"></a>配置jdbc.properties外部属性文件</h2><figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">jdbc.driverClass</span>=<span class="string">com.mysql.jdbc.Driver</span></span><br><span class="line"><span class="meta">jdbc.url</span>=<span class="string">jdbc:mysql://127.0.0.1:3306/spring2</span></span><br><span class="line"><span class="meta">jdbc.user</span>=<span class="string">root</span></span><br><span class="line"><span class="meta">jdbc.password</span>=<span class="string">123456</span></span><br></pre></td></tr></table></figure>
+<h2 id="xml文件配置"><a href="#xml文件配置" class="headerlink" title="xml文件配置"></a>xml文件配置</h2><ul>
+<li><strong><!--使用基于注解的方式实现Spring的声明式事务--></strong></li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">context:component-scan</span> <span class="attr">base-package</span>=<span class="string">"com.bin.spring2"</span>&gt;</span><span class="tag">&lt;/<span class="name">context:component-scan</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <ul>
-<li><p>下载PicGo：<a href="https://github.com/Molunerfinn/PicGo" target="_blank" rel="noopener">https://github.com/Molunerfinn/PicGo</a>下载匹配自己电脑的版本，这里我下的Windows版本。<br><img src="https://gitee.com/bin1018/MaYunImages/raw/master/img/20200306124226.png" alt=""></p>
-</li>
-<li><p>在PicGo中搜索gitee插件并安装。<br><img src="https://gitee.com/bin1018/MaYunImages/raw/master/img/20200306124604.png" alt=""></p>
-</li>
-<li><p>在码云中创建一个新厂库来保存图片</p>
-</li>
+<li><strong><!--导入外部的属性文件--></strong> </li>
 </ul>
-<p><img src="https://gitee.com/bin1018/MaYunImages/raw/master/img/20200306124907.png" alt=""></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">context:property-placeholder</span> <span class="attr">location</span>=<span class="string">"classpath:jdbc.properties"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 <ul>
-<li>创建完选择去设置</li>
+<li><strong><!--配置数据源--></strong> </li>
 </ul>
-<p><img src="https://gitee.com/bin1018/MaYunImages/raw/master/img/20200306125059.png" alt=""></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">class</span>=<span class="string">"com.mchange.v2.c3p0.ComboPooledDataSource"</span> <span class="attr">id</span>=<span class="string">"dataSource"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"driverClass"</span> <span class="attr">value</span>=<span class="string">"$&#123;jdbc.driverClass&#125;"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"jdbcUrl"</span> <span class="attr">value</span>=<span class="string">"$&#123;jdbc.url&#125;"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"user"</span> <span class="attr">value</span>=<span class="string">"$&#123;jdbc.user&#125;"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"password"</span> <span class="attr">value</span>=<span class="string">"$&#123;jdbc.password&#125;"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <ul>
-<li>点击私人令牌</li>
+<li><strong><!--配置使用JdbcTemplate--></strong></li>
 </ul>
-<p><img src="https://gitee.com/bin1018/MaYunImages/raw/master/img/20200306125309.png" alt=""></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">class</span>=<span class="string">"org.springframework.jdbc.core.JdbcTemplate"</span> <span class="attr">id</span>=<span class="string">"jdbcTemplate"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"dataSource"</span> <span class="attr">value</span>=<span class="string">"#&#123;dataSource&#125;"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <ul>
-<li>创建新的令牌，后勾选project即可提交</li>
+<li><strong><!--1.配置事物管理器--></strong></li>
 </ul>
-<p><img src="https://gitee.com/bin1018/MaYunImages/raw/master/img/20200306125412.png" alt=""></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">class</span>=<span class="string">"org.springframework.jdbc.datasource.DataSourceTransactionManager"</span> <span class="attr">id</span>=<span class="string">"transactionManager"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"dataSource"</span> <span class="attr">value</span>=<span class="string">"#&#123;dataSource&#125;"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <ul>
-<li>此时会生成一个token注意保存，只会显示一次。</li>
-<li>如下图设置PicGo即可。<br><img src="https://gitee.com/bin1018/MaYunImages/raw/master/img/20200306125716.png" alt=""></li>
+<li><strong><!--2、启用事务注解,如果事务管理器的bean的id就是 transactionManager， transaction-manager 属性可以省略 --></strong></li>
 </ul>
-<p>ps；一些坑，在这里使用PicGo作者出现了剪切板上传出现警告，你可能没有，我把我的解决办法奉上：</p>
-<ol>
-<li>找到powershell路径</li>
-</ol>
-<p><img src="https://gitee.com/bin1018/MaYunImages/raw/master/img/20200306130704.png" alt=""></p>
-<ol start="2">
-<li>在环境变量中path添加powershell路径已经piggo的相关配置</li>
-</ol>
-<p><img src="https://gitee.com/bin1018/MaYunImages/raw/master/img/20200306130902.png" alt=""></p>
-<p>3.重启电脑，后就可以使用自己的图床了。 </p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">tx:annotation-driven</span> <span class="attr">transaction-manager</span>=<span class="string">"transactionManager"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+<h1 id="二-注解使用及基本知识"><a href="#二-注解使用及基本知识" class="headerlink" title="二.注解使用及基本知识"></a>二.注解使用及基本知识</h1><h2 id="1-Transactional注解声明管理事务"><a href="#1-Transactional注解声明管理事务" class="headerlink" title="1. @Transactional注解声明管理事务"></a>1. <strong>@Transactional注解声明管理事务</strong></h2><h2 id="2-事务传播属性"><a href="#2-事务传播属性" class="headerlink" title="2. 事务传播属性"></a>2. <strong>事务传播属性</strong></h2><blockquote>
+<p>当事务被另一个事务调用时,必须指定事务应如何传播.例如:方法可能继续现有的事务中运行,也可能开启一个新的事务,并在自己的事务中运行<br>事务传播行为可以由传播属性指定.Spring定义了以下7种传播行为.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>传播属性</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>propagation_required</strong></td>
+<td><strong>如果有事务在运行，当前的方法就在这个事务内运行，否则就开启一个新的事务，并在自己的事务内运行（常用:也是默认选项）</strong></td>
+</tr>
+<tr>
+<td><strong>propagation_required_new</strong></td>
+<td><strong>当前的方法必须启动新事务，并在它自己的事务内运行。如果有事务在运行，应该将其挂起。（常用）</strong></td>
+</tr>
+<tr>
+<td>propagation_supports</td>
+<td>如果有事务在运行，当前这个方法就在这个事务内运行，否则它可以不运行在事务中</td>
+</tr>
+<tr>
+<td>propagation_not_supported</td>
+<td>当前的方法不应该运行在事务中，如果有运行的事务则将其挂起</td>
+</tr>
+<tr>
+<td>propagation_mandatory</td>
+<td>当前的方法必须运行在事务内，如果没有正在运行的事务，则抛出异常</td>
+</tr>
+<tr>
+<td>propagation_never</td>
+<td>当前方法不应该运行在事务中，如果有运行的事务，则抛出异常</td>
+</tr>
+<tr>
+<td>propagation_nested</td>
+<td>如果有事务在运行，当前方法就应该在这个事务的嵌套是事务内运行，否则就启动一个新的事务，并在自己的事务内运行</td>
+</tr>
+</tbody></table>
+<h2 id="3-事务隔离级别-isolation"><a href="#3-事务隔离级别-isolation" class="headerlink" title="3. 事务隔离级别(isolation)"></a>3. <strong>事务隔离级别(isolation)</strong></h2><blockquote>
+<p><strong>脏读:Read-uncommitted</strong><br>读未提交，顾名思义，就是一个事务可以读取另一个未提交事务的数据。</p>
+<p>事例：老板要给程序员发工资，程序员的工资是3.6万/月。但是发工资时老板不小心按错了数字，按成3.9万/月，该钱已经打到程序员的户口，但是事务还没有提交，就在这时，程序员去查看自己这个月的工资，发现比往常多了3千元，以为涨工资了非常高兴。但是老板及时发现了不对，马上回滚差点就提交了的事务，将数字改成3.6万再提交。</p>
+<p>分析：实际程序员这个月的工资还是3.6万，但是程序员看到的是3.9万。他看到的是老板还没提交事务时的数据。这就是脏读。</p>
+<p>Read committed！不可重复读，能解决脏读问题。</p>
+</blockquote>
+<blockquote>
+<p><strong>不可重复读:Read-committed</strong><br>读提交，顾名思义，就是一个事务要等另一个事务提交后才能读取数据。</p>
+<p>事例：程序员拿着信用卡去享受生活（卡里当然是只有3.6万），当他埋单时（程序员事务开启），收费系统事先检测到他的卡里有3.6万，就在这个时候！！程序员的妻子要把钱全部转出充当家用，并提交。当收费系统准备扣款时，再检测卡里的金额，发现已经没钱了（第二次检测金额当然要等待妻子转出金额事务提交完）。程序员就会很郁闷，明明卡里是有钱的…</p>
+<p>分析：这就是读提交，若有事务对数据进行更新（UPDATE）操作时，读操作事务要等待这个更新操作事务提交后才能读取数据，可以解决脏读问题。但在这个事例中，出现了一个事务范围内两个相同的查询却返回了不同数据，这就是不可重复读。</p>
+<p>Repeatable-read ！重复读,能解决不可重复读问题。</p>
+</blockquote>
+<blockquote>
+<p><strong>重复读:RepeatableRead</strong><br>重复读，就是在开始读取数据（事务开启）时，不再允许修改操作</p>
+<p>事例：程序员拿着信用卡去享受生活（卡里当然是只有3.6万），当他埋单时（事务开启，不允许其他事务的UPDATE修改操作），收费系统事先检测到他的卡里有3.6万。这个时候他的妻子不能转出金额了。接下来收费系统就可以扣款了。</p>
+<p>分析：重复读可以解决不可重复读问题。写到这里，应该明白的一点就是，不可重复读对应的是修改，即UPDATE操作。但是可能还会有幻读问题。因为幻读问题对应的是插入INSERT操作，而不是UPDATE操作。</p>
+<p><strong>什么时候会出现幻读？</strong></p>
+<p>事例：程序员某一天去消费，花了2千元，然后他的妻子去查看他今天的消费记录（全表扫描FTS，妻子事务开启），看到确实是花了2千元，就在这个时候，程序员花了1万买了一部电脑，即新增INSERT了一条消费记录，并提交。当妻子打印程序员的消费记录清单时（妻子事务提交），发现花了1.2万元，似乎出现了幻觉，这就是幻读。</p>
+<p>那怎么解决幻读问题？Serializable！</p>
+</blockquote>
+<blockquote>
+<p><strong>序列化:SERIALIZABLE</strong><br>Serializable 是最高的事务隔离级别，在该级别下，事务串行化顺序执行，可以避免脏读、不可重复读与幻读。但是这种事务隔离级别效率低下，比较耗数据库性能，一般不使用。</p>
+</blockquote>
+<blockquote>
+<p><strong>默认的:default</strong><br>数据库的默认隔离界别是什么就是什么 也是默认值</p>
+</blockquote>
+<p><strong>补充:</strong></p>
+<blockquote>
+<p>大多数数据库默认的事务隔离级别是Read committed，比如Sql Server , Oracle。Mysql的默认隔离级别是Repeatable read。</p>
+</blockquote>
+<h2 id="4-回滚事务属性"><a href="#4-回滚事务属性" class="headerlink" title="4. 回滚事务属性"></a>4. <strong>回滚事务属性</strong></h2><blockquote>
+<p><strong>只读 ： （readOnly）</strong><br>有的事务方法不会修改数据库的记录，只会读取数据库的记录。此时这个事务方法就可以标注成一个只读方法</p>
+</blockquote>
+<blockquote>
+<p><strong>超时： (timeout)</strong><br>设置事务方法执行的时间，超过某个时间，强制回滚，timeout值是以秒（s）为单位的</p>
+</blockquote>
+<blockquote>
+<p><strong>指定异常出现时回滚或不回滚：</strong><br>              rollbackFor<br>              noRollbackFor<br>              rollbackForClassName<br>              noRollbackForClassName</p>
+</blockquote>
 
     </div>
 <div>
@@ -362,7 +422,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://bin1018.gitee.io/2020/03/06/PicGo/" title="PicGo">http://bin1018.gitee.io/2020/03/06/PicGo/</a>
+    <a href="http://bin1018.gitee.io/2020/03/20/spring%E4%BA%8B%E5%8A%A1/" title="spring事务">http://bin1018.gitee.io/2020/03/20/spring事务/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -373,8 +433,8 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/PicGo/" rel="tag"><i class="fa fa-tag"></i> PicGo</a>
-              <a href="/tags/%E5%9B%BE%E5%BA%8A/" rel="tag"><i class="fa fa-tag"></i> 图床</a>
+              <a href="/tags/Spring/" rel="tag"><i class="fa fa-tag"></i> Spring</a>
+              <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag"><i class="fa fa-tag"></i> 数据库</a>
           </div>
 
         
@@ -383,12 +443,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/03/02/Redis/" rel="prev" title="Redis">
-      <i class="fa fa-chevron-left"></i> Redis
+    <a href="/2020/03/18/%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98/" rel="prev" title="跨域问题">
+      <i class="fa fa-chevron-left"></i> 跨域问题
     </a></div>
       <div class="post-nav-item">
-    <a href="/2020/03/06/Nginx/" rel="next" title="Nginx">
-      Nginx <i class="fa fa-chevron-right"></i>
+    <a href="/2020/03/20/HashMap/" rel="next" title="HashMap">
+      HashMap <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -450,6 +510,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一-基本配置"><span class="nav-number">1.</span> <span class="nav-text">一.基本配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#配置jdbc-properties外部属性文件"><span class="nav-number">1.1.</span> <span class="nav-text">配置jdbc.properties外部属性文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#xml文件配置"><span class="nav-number">1.2.</span> <span class="nav-text">xml文件配置</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二-注解使用及基本知识"><span class="nav-number">2.</span> <span class="nav-text">二.注解使用及基本知识</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Transactional注解声明管理事务"><span class="nav-number">2.1.</span> <span class="nav-text">1. @Transactional注解声明管理事务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-事务传播属性"><span class="nav-number">2.2.</span> <span class="nav-text">2. 事务传播属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-事务隔离级别-isolation"><span class="nav-number">2.3.</span> <span class="nav-text">3. 事务隔离级别(isolation)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-回滚事务属性"><span class="nav-number">2.4.</span> <span class="nav-text">4. 回滚事务属性</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
