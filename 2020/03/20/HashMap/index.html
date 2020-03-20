@@ -30,7 +30,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://gitee.com/bin1018/MaYunImages/raw/master/img/20200320131310.png">
 <meta property="article:published_time" content="2020-03-20T05:14:09.000Z">
-<meta property="article:modified_time" content="2020-03-20T05:18:40.615Z">
+<meta property="article:modified_time" content="2020-03-20T14:19:34.606Z">
 <meta property="article:author" content="朱彬">
 <meta property="article:tag" content="HashMap">
 <meta name="twitter:card" content="summary">
@@ -219,7 +219,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-03-20 13:14:09 / 修改时间：13:18:40" itemprop="dateCreated datePublished" datetime="2020-03-20T13:14:09+08:00">2020-03-20</time>
+              <time title="创建时间：2020-03-20 13:14:09 / 修改时间：22:19:34" itemprop="dateCreated datePublished" datetime="2020-03-20T13:14:09+08:00">2020-03-20</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -279,7 +279,7 @@
       
         <h1 id="基本介绍"><a href="#基本介绍" class="headerlink" title="基本介绍"></a>基本介绍</h1><p>HashMap基于哈希表的Map接口实现，是以key-value存储形式存在，即主要用来存放键值对。HashMap 的实现不是同步的，这意味着它不是线程安全的。它的key、value都可以为null。此外，HashMap中的映射不是有序的。</p>
 <p>JDK1.8 之前 HashMap 由 数组+链表 组成的，数组是 HashMap 的主体，链表则是主要为了解决哈希冲突(两个对象调用的hashCode方法计算的哈希码值一致导致计算的数组索引值相同)。JDK8之后，当链表长度大于阈值（或者红黑树的边界值，默认为 8）并且当前数组的<strong>长度大于64时</strong>，此时此索引位置上的所有数据改为使用红黑树存储。</p>
-<p>补充：将链表转换成红黑树前会判断，即使阈值大于8，但是数组长度小于64，此时并不会将链表变为红黑树。而是选择进行数组扩容。</p>
+<p>补充：将链表转换成红黑树前会判断，即使阈值大于8，但是数组长度小于64，此时并不会将链表变为红黑树。而是选择进行数组扩容。<br>当阈值小于6时红黑树会变回链表。</p>
 <p>当然虽然增了红黑树作为底层数据结构，结构变得复杂了，但是阈值大于8并且数组长度大于64时，链表转换为红黑树时，效率也变的相对更高效。</p>
 <a id="more"></a>
 <h1 id="特点："><a href="#特点：" class="headerlink" title="特点："></a>特点：</h1><p>1.存取无序的</p>
@@ -351,7 +351,10 @@
     <a href="/2020/03/20/spring%E4%BA%8B%E5%8A%A1/" rel="prev" title="spring事务">
       <i class="fa fa-chevron-left"></i> spring事务
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2020/03/20/Markdown%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97/" rel="next" title="Markdown入门指南">
+      Markdown入门指南 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -428,20 +431,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-count">9</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-count">8</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-count">11</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -497,13 +500,13 @@
       <i class="fa fa-area-chart"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">87k</span>
+    <span title="站点总字数">89k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">1:19</span>
+    <span title="站点阅读时长">1:21</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.2.0
   </div>
