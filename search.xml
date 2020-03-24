@@ -1,6 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Java内存分配</title>
+    <url>/2020/03/24/Java%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D/</url>
+    <content><![CDATA[<p><strong>Java内存分配</strong></p>
+<blockquote>
+<ol>
+<li>寄存器：JVM内部虚拟寄存器，存取速度非常快，程序不可控制。</li>
+<li>栈：存放基本类型的数据和对象的引用，但对象本身不存放在栈中，而是存放在堆中。</li>
+<li>堆：存放new出来的对象，注意创建出来的对象只包含各自的成员变量，不包括成员方法。&gt;</li>
+<li>常量池：存放常量，如基本类型的包装类(Integer、Short)和String,注意常量池位于堆中。</li>
+<li>代码段：用来存放从硬盘上读取的源程序代码。</li>
+<li>数据段：用来存放static修饰的静态成员。<br><img src="https://gitee.com/bin1018/MaYunImages/raw/master/img/20200310183722.png" alt=""></li>
+</ol>
+</blockquote>
+<a id="more"></a>
+<p><strong>可总结以下结论</strong></p>
+<blockquote>
+<ol>
+<li>Java中有两种类型，分别是基本类型和引用类型。如果是基本类型则直接在栈中保存值，如果是引用类型，则真正new出来的对象会存放在堆内存中，栈内存中会保存指向该对象的引用，即对象在堆内存中的地址。</li>
+<li>栈中的数据和堆中的数据销毁并不是同步的。每个方法在执行时都会建立自己的栈区，方法一旦结束，栈中的局部变量立即销毁，但是堆中对象不一定销毁。因为可能有其他变量也指向了这个对象，直到栈中没有变量指向堆中的对象时，它才销毁，而且还不是马上销毁，要等垃圾回收才可以被销毁，这个是由JVM决定的。</li>
+<li>类中定义的实例成员变量在不同对象中各不相同，都有自己的存储空间(成员变量在堆中的对象中)。而类中定义的方法却是该类的所有对象共享的，只有一套，对象使用方法的时候方法才被压入栈，方法不使用则不占用内存.</li>
+<li>java中的常量池技术，是为了方便快捷地创建某些对象而出现的，当需要一个对象时，就可以从池中取一个出来（如果池中没有则创建一个），则在需要重复创建相等变量时节省了很多时间。常量池其实也就是一块内存空间，不同于使用new关键字创建的对象所在的堆空间。</li>
+<li>java中的基本类型有：byte、short、char、int、long、boolean。其对应的包装类分别是：Byte、Short、Character、Integer、Long、Boolean。上边提到的这些包装类都实现了常量池技术，而两种浮点数类型的包装类则没有实现。另外，String类型也实现了常量池技术。</li>
+</ol>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> i = <span class="number">30</span>;</span><br><span class="line">        <span class="keyword">int</span> i0 = <span class="number">30</span>;</span><br><span class="line">        Integer i1 = <span class="number">30</span>;</span><br><span class="line">        Integer i2 = <span class="number">30</span>;</span><br><span class="line">        Integer i3 = <span class="number">0</span>;</span><br><span class="line">        Integer i4 = <span class="keyword">new</span> Integer(<span class="number">30</span>);</span><br><span class="line">        Integer i5 = <span class="keyword">new</span> Integer(<span class="number">30</span>);</span><br><span class="line">        Integer i6 = <span class="keyword">new</span> Integer(<span class="number">0</span>);</span><br><span class="line">        Double d1 = <span class="number">1.0</span>;</span><br><span class="line">        Double d2 = <span class="number">1.0</span>;</span><br><span class="line">        System.out.println(<span class="string">"i==i0结果为: "</span> + (i == i0));<span class="comment">//true</span></span><br><span class="line">        System.out.println(<span class="string">"i1==i2结果为: "</span> + (i1 == i2));<span class="comment">//true</span></span><br><span class="line">        <span class="comment">/*i1和i2均是引用类型，在栈中存储对象地址，因为Integer是包装类。</span></span><br><span class="line"><span class="comment">        由于Integer包装类实现了常量池技术，</span></span><br><span class="line"><span class="comment">        因此i1、i2的40均是从常量池中获取的，均指向同一个地址，因此i1==12。*/</span></span><br><span class="line">        System.out.println(<span class="string">"i==i2结果为: "</span> + (i == i2));<span class="comment">//true</span></span><br><span class="line">        System.out.println(<span class="string">"i1==i2+i3结果为: "</span> + (i1 == i2 + i3));<span class="comment">//true</span></span><br><span class="line">        <span class="comment">/*这是一个加法运算，</span></span><br><span class="line"><span class="comment">        Java的数学运算都是在栈中进行的，</span></span><br><span class="line"><span class="comment">        Java会自动对i1、i2进行拆箱操作转化成整型，因此i1在数值上等于i2+i3*/</span></span><br><span class="line">        System.out.println(<span class="string">"i==i2+i3结果为: "</span> + (i == i2 + i3));<span class="comment">//true</span></span><br><span class="line">        System.out.println(<span class="string">"i4==i5结果为: "</span> + (i4 == i5));<span class="comment">//false</span></span><br><span class="line">        <span class="comment">/*.i4和i5均是引用类型，在栈中存储地址，因为Integer是包装类。</span></span><br><span class="line"><span class="comment">        但是由于他们各自都是new出来的，因此不再从常量池寻找数据，</span></span><br><span class="line"><span class="comment">        而是从堆中各自new一个对象，然后各自保存指向对象的地址，所以i4和i5不相等，</span></span><br><span class="line"><span class="comment">        因为他们所存地址不同，所引用到的对象不同。*/</span></span><br><span class="line">        System.out.println(<span class="string">"i4==i5+i6结果为: "</span> + (i4 == i5 + i6));<span class="comment">//true</span></span><br><span class="line">        System.out.println(<span class="string">"i==i5+i6结果为: "</span> + (i == i5 + i6));<span class="comment">//true</span></span><br><span class="line">        System.out.println(<span class="string">"d1==d2结果为: "</span> + (d1 == d2));<span class="comment">//false</span></span><br><span class="line">        <span class="comment">/*. d1和d2均是引用类型，在栈中存储对象地址，因为Double是包装类。</span></span><br><span class="line"><span class="comment">        但Double包装类没有实现常量池技术，因此Doubled1=1.0;相当于Double d1=new Double(1.0);</span></span><br><span class="line"><span class="comment">        是从堆new一个对象，d2同理。因此d1和d2存放的地址不同，指向的对象不同，所以不相等。*/</span></span><br><span class="line"></span><br><span class="line">        **String类型**</span><br><span class="line">&gt;对于字符串，其对象的引用都是存储在栈中的，如果是编译期已经创建好 **(直接用双引号定义的)** 的就存储在常量池中，如果是运行期 **（<span class="keyword">new</span>出来的)** 才能确定的就存储在堆中。对于equals相等的字符串，在常量池中永远只有一份，在堆中有多份。</span><br><span class="line">```java</span><br><span class="line"> String s1 = <span class="string">"china"</span>;</span><br><span class="line"> String s2 = <span class="string">"china"</span>;</span><br><span class="line"> String s3 = <span class="string">"china"</span>;</span><br><span class="line"></span><br><span class="line"> String ss1 = <span class="keyword">new</span> String(<span class="string">"china"</span>);</span><br><span class="line"> String ss2 = <span class="keyword">new</span> String(<span class="string">"china"</span>);</span><br><span class="line"> String ss3 = <span class="keyword">new</span> String(<span class="string">"china"</span>);</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/bin1018/MaYunImages/raw/master/img/20200310183703.png" alt=""></p>
+]]></content>
+      <categories>
+        <category>后端</category>
+      </categories>
+      <tags>
+        <tag>Java内存分配</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>FastDFS文件上传</title>
     <url>/2020/03/21/FastDFS%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/</url>
     <content><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>FastDFS是一个开源的轻量级分布式文件系统，它对文件进行管理，功能包括：文件存储、文件同步、文件访问（文件上传、文件下载）等，解决了大容量存储和负载均衡的问题。特别适合以中小文件（建议范围：4KB &lt; file_size &lt;500MB），如相册网站、视频网站等等</p>
@@ -318,11 +353,10 @@
 </blockquote>
 ]]></content>
       <categories>
-        <category>数据库</category>
+        <category>后端</category>
       </categories>
       <tags>
         <tag>Spring</tag>
-        <tag>数据库</tag>
       </tags>
   </entry>
   <entry>
@@ -517,7 +551,7 @@
 <p><strong>完成Shiro的资源授权</strong></p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">UserRealm：</span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 执行授权逻辑</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">protected</span> AuthorizationInfo <span class="title">doGetAuthorizationInfo</span><span class="params">(PrincipalCollection arg0)</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"执行授权逻辑"</span>);</span><br><span class="line">		</span><br><span class="line">		<span class="comment">//给资源进行授权</span></span><br><span class="line">		SimpleAuthorizationInfo info = <span class="keyword">new</span> SimpleAuthorizationInfo();</span><br><span class="line">		</span><br><span class="line">		<span class="comment">//添加资源的授权字符串</span></span><br><span class="line">		info.addStringPermission(<span class="string">"user:add"</span>);</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">return</span> info;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
-        <category>Java 框架</category>
+        <category>后端</category>
       </categories>
       <tags>
         <tag>Shiro</tag>
@@ -792,7 +826,7 @@
 <h1 id="SpringBoot自定义starter"><a href="#SpringBoot自定义starter" class="headerlink" title="SpringBoot自定义starter"></a>SpringBoot自定义starter</h1><p>可参考以下博客：<a href="https://blog.csdn.net/vbirdbest/article/details/79863883" target="_blank" rel="noopener">https://blog.csdn.net/vbirdbest/article/details/79863883</a></p>
 ]]></content>
       <categories>
-        <category>Java 框架</category>
+        <category>后端</category>
       </categories>
       <tags>
         <tag>SpringBoot</tag>
@@ -852,7 +886,7 @@
 <p>ps：上面用到了正则表达式，默认css等静态资源将再静态资源文件中获取。</p>
 ]]></content>
       <categories>
-        <category>Nginx</category>
+        <category>后端</category>
       </categories>
       <tags>
         <tag>Nginx</tag>
@@ -1221,7 +1255,7 @@
 <p><code>其中JedisPoolConfig对一些参数的默认设置如下：</code><br>testWhileIdle=true<br>minEvictableIdleTimeMills=60000<br>timeBetweenEvictionRunsMillis=30000<br>numTestsPerEvictionRun=-1</p>
 ]]></content>
       <categories>
-        <category>NoSql</category>
+        <category>后端</category>
       </categories>
       <tags>
         <tag>Redis</tag>

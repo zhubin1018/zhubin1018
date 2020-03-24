@@ -21,31 +21,23 @@
     var CONFIG = {"hostname":"bin1018.gitee.io","root":"/","scheme":"Gemini","version":"7.7.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="&amp;#160; &amp;#160; &amp;#160; &amp;#160; 对于很多程序员来说都有写博客的习惯，之前一直喜欢用印象笔记来写东西然后发布到自己的CSDN账号。不过发现一个问题，印象笔记生成的图片链接到CSDN上无法使用，显示私密链接。而且很多程序员都有自己的个人博客，对于博客来说不可避免有不少图片，会严重影响博客的加载速度，于是很多程序员都喜欢用图床技术。&amp;#160; &amp;#160; &amp;#160; &amp;#1">
+  <meta name="description" content="Java内存分配   寄存器：JVM内部虚拟寄存器，存取速度非常快，程序不可控制。 栈：存放基本类型的数据和对象的引用，但对象本身不存放在栈中，而是存放在堆中。 堆：存放new出来的对象，注意创建出来的对象只包含各自的成员变量，不包括成员方法。&gt; 常量池：存放常量，如基本类型的包装类(Integer、Short)和String,注意常量池位于堆中。 代码段：用来存放从硬盘上读取的源程序代码。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="PicGo">
-<meta property="og:url" content="http://bin1018.gitee.io/2020/03/06/PicGo/index.html">
+<meta property="og:title" content="Java内存分配">
+<meta property="og:url" content="http://bin1018.gitee.io/2020/03/24/Java%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D/index.html">
 <meta property="og:site_name" content="ZhuBin">
-<meta property="og:description" content="&amp;#160; &amp;#160; &amp;#160; &amp;#160; 对于很多程序员来说都有写博客的习惯，之前一直喜欢用印象笔记来写东西然后发布到自己的CSDN账号。不过发现一个问题，印象笔记生成的图片链接到CSDN上无法使用，显示私密链接。而且很多程序员都有自己的个人博客，对于博客来说不可避免有不少图片，会严重影响博客的加载速度，于是很多程序员都喜欢用图床技术。&amp;#160; &amp;#160; &amp;#160; &amp;#1">
+<meta property="og:description" content="Java内存分配   寄存器：JVM内部虚拟寄存器，存取速度非常快，程序不可控制。 栈：存放基本类型的数据和对象的引用，但对象本身不存放在栈中，而是存放在堆中。 堆：存放new出来的对象，注意创建出来的对象只包含各自的成员变量，不包括成员方法。&gt; 常量池：存放常量，如基本类型的包装类(Integer、Short)和String,注意常量池位于堆中。 代码段：用来存放从硬盘上读取的源程序代码。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://gitee.com/bin1018/MaYunImages/raw/master/img/20200306124226.png">
-<meta property="og:image" content="https://gitee.com/bin1018/MaYunImages/raw/master/img/20200306124604.png">
-<meta property="og:image" content="https://gitee.com/bin1018/MaYunImages/raw/master/img/20200306124907.png">
-<meta property="og:image" content="https://gitee.com/bin1018/MaYunImages/raw/master/img/20200306125059.png">
-<meta property="og:image" content="https://gitee.com/bin1018/MaYunImages/raw/master/img/20200306125309.png">
-<meta property="og:image" content="https://gitee.com/bin1018/MaYunImages/raw/master/img/20200306125412.png">
-<meta property="og:image" content="https://gitee.com/bin1018/MaYunImages/raw/master/img/20200306125716.png">
-<meta property="og:image" content="https://gitee.com/bin1018/MaYunImages/raw/master/img/20200306130704.png">
-<meta property="og:image" content="https://gitee.com/bin1018/MaYunImages/raw/master/img/20200306130902.png">
-<meta property="article:published_time" content="2020-03-06T04:00:32.000Z">
-<meta property="article:modified_time" content="2020-03-06T05:14:55.360Z">
+<meta property="og:image" content="https://gitee.com/bin1018/MaYunImages/raw/master/img/20200310183722.png">
+<meta property="og:image" content="https://gitee.com/bin1018/MaYunImages/raw/master/img/20200310183703.png">
+<meta property="article:published_time" content="2020-03-24T03:55:14.000Z">
+<meta property="article:modified_time" content="2020-03-24T03:57:08.998Z">
 <meta property="article:author" content="朱彬">
-<meta property="article:tag" content="PicGo">
-<meta property="article:tag" content="图床">
+<meta property="article:tag" content="Java内存分配">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://gitee.com/bin1018/MaYunImages/raw/master/img/20200306124226.png">
+<meta name="twitter:image" content="https://gitee.com/bin1018/MaYunImages/raw/master/img/20200310183722.png">
 
-<link rel="canonical" href="http://bin1018.gitee.io/2020/03/06/PicGo/">
+<link rel="canonical" href="http://bin1018.gitee.io/2020/03/24/Java%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D/">
 
 
 <script id="page-configurations">
@@ -57,7 +49,7 @@
   };
 </script>
 
-  <title>PicGo | ZhuBin</title>
+  <title>Java内存分配 | ZhuBin</title>
   
 
 
@@ -204,7 +196,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://bin1018.gitee.io/2020/03/06/PicGo/">
+    <link itemprop="mainEntityOfPage" href="http://bin1018.gitee.io/2020/03/24/Java%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://gitee.com/bin1018/MaYunImages/raw/master/img/20200302123325.jpg">
@@ -217,7 +209,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          PicGo
+          Java内存分配
         </h1>
 
         <div class="post-meta">
@@ -228,7 +220,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-03-06 12:00:32 / 修改时间：13:14:55" itemprop="dateCreated datePublished" datetime="2020-03-06T12:00:32+08:00">2020-03-06</time>
+              <time title="创建时间：2020-03-24 11:55:14 / 修改时间：11:57:08" itemprop="dateCreated datePublished" datetime="2020-03-24T11:55:14+08:00">2020-03-24</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -236,7 +228,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%9B%BE%E5%BA%8A/" itemprop="url" rel="index"><span itemprop="name">图床</span></a>
+                  <a href="/categories/%E5%90%8E%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">后端</span></a>
                 </span>
             </span>
 
@@ -256,8 +248,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2020/03/06/PicGo/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/03/06/PicGo/" itemprop="commentCount"></span>
+    <a title="valine" href="/2020/03/24/Java%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/03/24/Java%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -267,14 +259,14 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>804</span>
+              <span>2.3k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="fa fa-clock-o"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
+              <span>2 分钟</span>
             </span>
 
         </div>
@@ -286,44 +278,30 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>&#160; &#160; &#160; &#160; 对于很多程序员来说都有写博客的习惯，之前一直喜欢用印象笔记来写东西然后发布到自己的CSDN账号。不过发现一个问题，印象笔记生成的图片链接到CSDN上无法使用，显示私密链接。而且很多程序员都有自己的个人博客，对于博客来说不可避免有不少图片，会严重影响博客的加载速度，于是很多程序员都喜欢用图床技术。<br>&#160; &#160; &#160; &#160; 为了解决这个问题，可以把自己图片放到图床上去，这样就可以共用。可以直接在聚合图床：<a href="https://www.superbed.cn" target="_blank" rel="noopener">https://www.superbed.cn</a>，上传自己的图片获得链接。可是有弊端，链接可能会失效，之前阅读别人博客，会发现很多博客图片失效。对于程序员来说博客图片必不可少，若多年前文章中图片链接突然失效，很难恢复，因为自己很难记得这些图的内容了。当然聚合图床的会员可以避免这种情况。很贵，不推荐。求人不如求己，我们可以用github构造一个图床，由于github外网的原因，图片加载会很慢，github能做到的事情码云肯定可以做，说了这么多，现在就讲如何用PicGo+码云来构建自己的图床。所有操作之前先在自己电脑内下载node.js。</p>
-<a id="more"></a>
-
-<ul>
-<li><p>下载PicGo：<a href="https://github.com/Molunerfinn/PicGo" target="_blank" rel="noopener">https://github.com/Molunerfinn/PicGo</a>下载匹配自己电脑的版本，这里我下的Windows版本。<br><img src="https://gitee.com/bin1018/MaYunImages/raw/master/img/20200306124226.png" alt=""></p>
-</li>
-<li><p>在PicGo中搜索gitee插件并安装。<br><img src="https://gitee.com/bin1018/MaYunImages/raw/master/img/20200306124604.png" alt=""></p>
-</li>
-<li><p>在码云中创建一个新厂库来保存图片</p>
-</li>
-</ul>
-<p><img src="https://gitee.com/bin1018/MaYunImages/raw/master/img/20200306124907.png" alt=""></p>
-<ul>
-<li>创建完选择去设置</li>
-</ul>
-<p><img src="https://gitee.com/bin1018/MaYunImages/raw/master/img/20200306125059.png" alt=""></p>
-<ul>
-<li>点击私人令牌</li>
-</ul>
-<p><img src="https://gitee.com/bin1018/MaYunImages/raw/master/img/20200306125309.png" alt=""></p>
-<ul>
-<li>创建新的令牌，后勾选project即可提交</li>
-</ul>
-<p><img src="https://gitee.com/bin1018/MaYunImages/raw/master/img/20200306125412.png" alt=""></p>
-<ul>
-<li>此时会生成一个token注意保存，只会显示一次。</li>
-<li>如下图设置PicGo即可。<br><img src="https://gitee.com/bin1018/MaYunImages/raw/master/img/20200306125716.png" alt=""></li>
-</ul>
-<p>ps；一些坑，在这里使用PicGo作者出现了剪切板上传出现警告，你可能没有，我把我的解决办法奉上：</p>
+        <p><strong>Java内存分配</strong></p>
+<blockquote>
 <ol>
-<li>找到powershell路径</li>
+<li>寄存器：JVM内部虚拟寄存器，存取速度非常快，程序不可控制。</li>
+<li>栈：存放基本类型的数据和对象的引用，但对象本身不存放在栈中，而是存放在堆中。</li>
+<li>堆：存放new出来的对象，注意创建出来的对象只包含各自的成员变量，不包括成员方法。&gt;</li>
+<li>常量池：存放常量，如基本类型的包装类(Integer、Short)和String,注意常量池位于堆中。</li>
+<li>代码段：用来存放从硬盘上读取的源程序代码。</li>
+<li>数据段：用来存放static修饰的静态成员。<br><img src="https://gitee.com/bin1018/MaYunImages/raw/master/img/20200310183722.png" alt=""></li>
 </ol>
-<p><img src="https://gitee.com/bin1018/MaYunImages/raw/master/img/20200306130704.png" alt=""></p>
-<ol start="2">
-<li>在环境变量中path添加powershell路径已经piggo的相关配置</li>
+</blockquote>
+<a id="more"></a>
+<p><strong>可总结以下结论</strong></p>
+<blockquote>
+<ol>
+<li>Java中有两种类型，分别是基本类型和引用类型。如果是基本类型则直接在栈中保存值，如果是引用类型，则真正new出来的对象会存放在堆内存中，栈内存中会保存指向该对象的引用，即对象在堆内存中的地址。</li>
+<li>栈中的数据和堆中的数据销毁并不是同步的。每个方法在执行时都会建立自己的栈区，方法一旦结束，栈中的局部变量立即销毁，但是堆中对象不一定销毁。因为可能有其他变量也指向了这个对象，直到栈中没有变量指向堆中的对象时，它才销毁，而且还不是马上销毁，要等垃圾回收才可以被销毁，这个是由JVM决定的。</li>
+<li>类中定义的实例成员变量在不同对象中各不相同，都有自己的存储空间(成员变量在堆中的对象中)。而类中定义的方法却是该类的所有对象共享的，只有一套，对象使用方法的时候方法才被压入栈，方法不使用则不占用内存.</li>
+<li>java中的常量池技术，是为了方便快捷地创建某些对象而出现的，当需要一个对象时，就可以从池中取一个出来（如果池中没有则创建一个），则在需要重复创建相等变量时节省了很多时间。常量池其实也就是一块内存空间，不同于使用new关键字创建的对象所在的堆空间。</li>
+<li>java中的基本类型有：byte、short、char、int、long、boolean。其对应的包装类分别是：Byte、Short、Character、Integer、Long、Boolean。上边提到的这些包装类都实现了常量池技术，而两种浮点数类型的包装类则没有实现。另外，String类型也实现了常量池技术。</li>
 </ol>
-<p><img src="https://gitee.com/bin1018/MaYunImages/raw/master/img/20200306130902.png" alt=""></p>
-<p>3.重启电脑，后就可以使用自己的图床了。 </p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> i = <span class="number">30</span>;</span><br><span class="line">        <span class="keyword">int</span> i0 = <span class="number">30</span>;</span><br><span class="line">        Integer i1 = <span class="number">30</span>;</span><br><span class="line">        Integer i2 = <span class="number">30</span>;</span><br><span class="line">        Integer i3 = <span class="number">0</span>;</span><br><span class="line">        Integer i4 = <span class="keyword">new</span> Integer(<span class="number">30</span>);</span><br><span class="line">        Integer i5 = <span class="keyword">new</span> Integer(<span class="number">30</span>);</span><br><span class="line">        Integer i6 = <span class="keyword">new</span> Integer(<span class="number">0</span>);</span><br><span class="line">        Double d1 = <span class="number">1.0</span>;</span><br><span class="line">        Double d2 = <span class="number">1.0</span>;</span><br><span class="line">        System.out.println(<span class="string">"i==i0结果为: "</span> + (i == i0));<span class="comment">//true</span></span><br><span class="line">        System.out.println(<span class="string">"i1==i2结果为: "</span> + (i1 == i2));<span class="comment">//true</span></span><br><span class="line">        <span class="comment">/*i1和i2均是引用类型，在栈中存储对象地址，因为Integer是包装类。</span></span><br><span class="line"><span class="comment">        由于Integer包装类实现了常量池技术，</span></span><br><span class="line"><span class="comment">        因此i1、i2的40均是从常量池中获取的，均指向同一个地址，因此i1==12。*/</span></span><br><span class="line">        System.out.println(<span class="string">"i==i2结果为: "</span> + (i == i2));<span class="comment">//true</span></span><br><span class="line">        System.out.println(<span class="string">"i1==i2+i3结果为: "</span> + (i1 == i2 + i3));<span class="comment">//true</span></span><br><span class="line">        <span class="comment">/*这是一个加法运算，</span></span><br><span class="line"><span class="comment">        Java的数学运算都是在栈中进行的，</span></span><br><span class="line"><span class="comment">        Java会自动对i1、i2进行拆箱操作转化成整型，因此i1在数值上等于i2+i3*/</span></span><br><span class="line">        System.out.println(<span class="string">"i==i2+i3结果为: "</span> + (i == i2 + i3));<span class="comment">//true</span></span><br><span class="line">        System.out.println(<span class="string">"i4==i5结果为: "</span> + (i4 == i5));<span class="comment">//false</span></span><br><span class="line">        <span class="comment">/*.i4和i5均是引用类型，在栈中存储地址，因为Integer是包装类。</span></span><br><span class="line"><span class="comment">        但是由于他们各自都是new出来的，因此不再从常量池寻找数据，</span></span><br><span class="line"><span class="comment">        而是从堆中各自new一个对象，然后各自保存指向对象的地址，所以i4和i5不相等，</span></span><br><span class="line"><span class="comment">        因为他们所存地址不同，所引用到的对象不同。*/</span></span><br><span class="line">        System.out.println(<span class="string">"i4==i5+i6结果为: "</span> + (i4 == i5 + i6));<span class="comment">//true</span></span><br><span class="line">        System.out.println(<span class="string">"i==i5+i6结果为: "</span> + (i == i5 + i6));<span class="comment">//true</span></span><br><span class="line">        System.out.println(<span class="string">"d1==d2结果为: "</span> + (d1 == d2));<span class="comment">//false</span></span><br><span class="line">        <span class="comment">/*. d1和d2均是引用类型，在栈中存储对象地址，因为Double是包装类。</span></span><br><span class="line"><span class="comment">        但Double包装类没有实现常量池技术，因此Doubled1=1.0;相当于Double d1=new Double(1.0);</span></span><br><span class="line"><span class="comment">        是从堆new一个对象，d2同理。因此d1和d2存放的地址不同，指向的对象不同，所以不相等。*/</span></span><br><span class="line"></span><br><span class="line">        **String类型**</span><br><span class="line">&gt;对于字符串，其对象的引用都是存储在栈中的，如果是编译期已经创建好 **(直接用双引号定义的)** 的就存储在常量池中，如果是运行期 **（<span class="keyword">new</span>出来的)** 才能确定的就存储在堆中。对于equals相等的字符串，在常量池中永远只有一份，在堆中有多份。</span><br><span class="line">```java</span><br><span class="line"> String s1 = <span class="string">"china"</span>;</span><br><span class="line"> String s2 = <span class="string">"china"</span>;</span><br><span class="line"> String s3 = <span class="string">"china"</span>;</span><br><span class="line"></span><br><span class="line"> String ss1 = <span class="keyword">new</span> String(<span class="string">"china"</span>);</span><br><span class="line"> String ss2 = <span class="keyword">new</span> String(<span class="string">"china"</span>);</span><br><span class="line"> String ss3 = <span class="keyword">new</span> String(<span class="string">"china"</span>);</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/bin1018/MaYunImages/raw/master/img/20200310183703.png" alt=""></p>
 
     </div>
 <div>
@@ -362,7 +340,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://bin1018.gitee.io/2020/03/06/PicGo/" title="PicGo">http://bin1018.gitee.io/2020/03/06/PicGo/</a>
+    <a href="http://bin1018.gitee.io/2020/03/24/Java%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D/" title="Java内存分配">http://bin1018.gitee.io/2020/03/24/Java内存分配/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -373,8 +351,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/PicGo/" rel="tag"><i class="fa fa-tag"></i> PicGo</a>
-              <a href="/tags/%E5%9B%BE%E5%BA%8A/" rel="tag"><i class="fa fa-tag"></i> 图床</a>
+              <a href="/tags/Java%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D/" rel="tag"><i class="fa fa-tag"></i> Java内存分配</a>
           </div>
 
         
@@ -383,13 +360,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/03/02/Redis/" rel="prev" title="Redis">
-      <i class="fa fa-chevron-left"></i> Redis
+    <a href="/2020/03/21/FastDFS%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/" rel="prev" title="FastDFS文件上传">
+      <i class="fa fa-chevron-left"></i> FastDFS文件上传
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2020/03/06/Nginx/" rel="next" title="Nginx">
-      Nginx <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
