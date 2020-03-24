@@ -18,7 +18,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"bin1018.gitee.io","root":"/","scheme":"Gemini","version":"7.7.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"bin1018.gitee.io","root":"/","scheme":"Gemini","version":"7.7.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="Knowledge is power">
@@ -190,6 +190,210 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://bin1018.gitee.io/2020/03/24/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://gitee.com/bin1018/MaYunImages/raw/master/img/20200302123325.jpg">
+      <meta itemprop="name" content="朱彬">
+      <meta itemprop="description" content="Knowledge is power">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZhuBin">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/03/24/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/" class="post-title-link" itemprop="url">代理模式</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-03-24 21:11:07 / 修改时间：21:14:46" itemprop="dateCreated datePublished" datetime="2020-03-24T21:11:07+08:00">2020-03-24</time>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/03/24/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/03/24/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>3.5k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>3 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>代理模式</p>
+<ul>
+<li>代理模式是指,为其他对象提供一种代理以控制对这个对象的访问.在某些情况下,一个对象不适合或者不能直接引用另一个对象,而代理对象可以在客户类和目标对象之间起到中介的作用<br>(通俗的说,面对纠纷打官司,此时的律师便可看作代理对象)<br>使用代理对象,是为了在不修改目标对象的基础上,增强业务逻辑;<br>客户类真正想要访问的对象是目标对象,但客户类真正可以访问的对象是代理对象;<br>客户类对目标对象的是通过访问代理对象来实现;当然,代理类与目标类要实现同一接口;
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/03/24/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+<div>
+
+</div>
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://bin1018.gitee.io/2020/03/24/Java%E7%B1%BB%E7%9A%84%E5%8A%A0%E8%BD%BD%E4%B8%8E%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://gitee.com/bin1018/MaYunImages/raw/master/img/20200302123325.jpg">
+      <meta itemprop="name" content="朱彬">
+      <meta itemprop="description" content="Knowledge is power">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZhuBin">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/03/24/Java%E7%B1%BB%E7%9A%84%E5%8A%A0%E8%BD%BD%E4%B8%8E%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1/" class="post-title-link" itemprop="url">Java类的加载与创建对象</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-03-24 21:04:21 / 修改时间：21:05:47" itemprop="dateCreated datePublished" datetime="2020-03-24T21:04:21+08:00">2020-03-24</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">Java基础</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/03/24/Java%E7%B1%BB%E7%9A%84%E5%8A%A0%E8%BD%BD%E4%B8%8E%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/03/24/Java%E7%B1%BB%E7%9A%84%E5%8A%A0%E8%BD%BD%E4%B8%8E%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>7.7k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>7 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="类的加载过程"><a href="#类的加载过程" class="headerlink" title="类的加载过程"></a>类的加载过程</h1><p>首先，Jvm在执行时，遇到一个新的类时，会到内存中的方法区去找class的信息，如果找到就直接拿来用，如果没有找到，就会去将类文件加载到方法区。在类加载时，静态成员变量加载到方法区的静态区域，非静态成员变量加载到方法区的非静态区域。</p>
+<p>静态代码块是在类加载时自动执行的代码，非静态代码块是在创建对象时自动执行的代码，不创建对象不执行该类的非静态代码块。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/03/24/Java%E7%B1%BB%E7%9A%84%E5%8A%A0%E8%BD%BD%E4%B8%8E%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+<div>
+
+</div>
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://bin1018.gitee.io/2020/03/24/static%E5%85%B3%E9%94%AE%E5%AD%97/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -321,7 +525,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-03-24 11:55:14 / 修改时间：12:01:36" itemprop="dateCreated datePublished" datetime="2020-03-24T11:55:14+08:00">2020-03-24</time>
+              <time title="创建时间：2020-03-24 11:55:14 / 修改时间：18:31:54" itemprop="dateCreated datePublished" datetime="2020-03-24T11:55:14+08:00">2020-03-24</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -518,229 +722,6 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://bin1018.gitee.io/2020/03/20/Markdown%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://gitee.com/bin1018/MaYunImages/raw/master/img/20200302123325.jpg">
-      <meta itemprop="name" content="朱彬">
-      <meta itemprop="description" content="Knowledge is power">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ZhuBin">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/03/20/Markdown%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97/" class="post-title-link" itemprop="url">Markdown入门指南</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-03-20 22:29:57 / 修改时间：22:38:23" itemprop="dateCreated datePublished" datetime="2020-03-20T22:29:57+08:00">2020-03-20</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Markdown/" itemprop="url" rel="index"><span itemprop="name">Markdown</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2020/03/20/Markdown%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/03/20/Markdown%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>859</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="设置分级标题"><a href="#设置分级标题" class="headerlink" title="设置分级标题"></a>设置分级标题</h1><p><strong>语法示例</strong>：</p>
-<blockquote>
-<p># 一级标题<br>## 二级标题<br>### 三级标题<br>#### 四级标题<br>##### 五级标题<br>###### 六级标题</p>
-</blockquote>
-<hr>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/03/20/Markdown%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-<div>
-
-</div>
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://bin1018.gitee.io/2020/03/20/HashMap/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://gitee.com/bin1018/MaYunImages/raw/master/img/20200302123325.jpg">
-      <meta itemprop="name" content="朱彬">
-      <meta itemprop="description" content="Knowledge is power">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ZhuBin">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/03/20/HashMap/" class="post-title-link" itemprop="url">HashMap</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-03-20 13:14:09" itemprop="dateCreated datePublished" datetime="2020-03-20T13:14:09+08:00">2020-03-20</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-03-24 17:42:51" itemprop="dateModified" datetime="2020-03-24T17:42:51+08:00">2020-03-24</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">Java基础</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2020/03/20/HashMap/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/03/20/HashMap/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.2k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="基本介绍"><a href="#基本介绍" class="headerlink" title="基本介绍"></a>基本介绍</h1><p>HashMap基于哈希表的Map接口实现，是以key-value存储形式存在，即主要用来存放键值对。HashMap 的实现不是同步的，这意味着它不是线程安全的。它的key、value都可以为null。此外，HashMap中的映射不是有序的。</p>
-<p>JDK1.8 之前 HashMap 由 数组+链表 组成的，数组是 HashMap 的主体，链表则是主要为了解决哈希冲突(两个对象调用的hashCode方法计算的哈希码值一致导致计算的数组索引值相同)。JDK8之后，当链表长度大于阈值（或者红黑树的边界值，默认为 8）并且当前数组的<strong>长度大于64时</strong>，此时此索引位置上的所有数据改为使用红黑树存储。</p>
-<p>补充：将链表转换成红黑树前会判断，即使阈值大于8，但是数组长度小于64，此时并不会将链表变为红黑树。而是选择进行数组扩容。<br>当阈值小于6时红黑树会变回链表。</p>
-<p>当然虽然增了红黑树作为底层数据结构，结构变得复杂了，但是阈值大于8并且数组长度大于64时，链表转换为红黑树时，效率也变的相对更高效。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/03/20/HashMap/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-<div>
-
-</div>
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
@@ -813,7 +794,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-count">14</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -826,7 +807,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-count">15</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -882,13 +863,13 @@
       <i class="fa fa-area-chart"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">99k</span>
+    <span title="站点总字数">110k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">1:30</span>
+    <span title="站点阅读时长">1:40</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.2.0
   </div>
