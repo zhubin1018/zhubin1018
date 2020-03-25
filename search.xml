@@ -1,6 +1,328 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>反射/注解</title>
+    <url>/2020/03/25/%E5%8F%8D%E5%B0%84-%E6%B3%A8%E8%A7%A3/</url>
+    <content><![CDATA[<h1 id="反射"><a href="#反射" class="headerlink" title="反射"></a>反射</h1><p>JAVA反射机制是在运行状态中，对于任意一个实体类，都能够知道这个类的所有属性和方法；对于任意一个对象，都能够调用它的任意方法和属性；这种<code>动态获取信息以及动态调用对象方法的功能</code>称为java语言的反射机制。</p>
+<p>框架：半成品项目。我们可以再框架的基础上进行软件开发，简化编码。</p>
+<p>反射：框架的基础，也是框架的灵魂。将类的各个组成部分封装成其他的对象。</p>
+<p>反射的好处：可以在程序运行过程中，操作这些对象。可以提高程序扩展性和复用性，可以解耦。</p>
+<a id="more"></a>
+<h2 id="class"><a href="#class" class="headerlink" title="class"></a>class</h2><p>Class代表类的实体，在运行的Java应用程序中表示类和接口。在这个类中提供了很多有用的方法，这里对他们简单的分类介绍。</p>
+<p><strong>获得类相关的方法</strong></p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>asSubclass(Class<U> clazz)</td>
+<td>把传递的类的对象转换成代表其子类的对象</td>
+</tr>
+<tr>
+<td>getClassLoader()</td>
+<td>获得类的加载器</td>
+</tr>
+<tr>
+<td>getClasses()</td>
+<td>返回一个数组，数组中包含该类中所有公共类和接口类的对象</td>
+</tr>
+<tr>
+<td>getDeclaredClasses()</td>
+<td>返回一个数组，数组中包含该类中所有类和接口类的对象</td>
+</tr>
+<tr>
+<td>forName(String className)</td>
+<td>根据类名返回类的对象</td>
+</tr>
+<tr>
+<td>getName()</td>
+<td>获得类的完整路径名字</td>
+</tr>
+<tr>
+<td>newInstance()</td>
+<td>创建类的实例</td>
+</tr>
+<tr>
+<td>getPackage()</td>
+<td>获得类的包</td>
+</tr>
+<tr>
+<td>getSimpleName()</td>
+<td>获得类的名字</td>
+</tr>
+<tr>
+<td>getSuperclass()</td>
+<td>获得当前类继承的父类的名字</td>
+</tr>
+<tr>
+<td>getInterfaces()</td>
+<td>获得当前类实现的类或是接口</td>
+</tr>
+<tr>
+<td>.class</td>
+<td>获取当前对象的类</td>
+</tr>
+</tbody></table>
+<p>QUESTION：Java中父类对象是否可以转换为子类对象？<br>回答：<br>1.在java中，子类对象可以直接转换为父类对象，但是父类对象不能 直接 转换为子类对象<br>2.当当前的对象确定是某个子类的对象时，那么就可以将这个父类引用转换为对应的子类对象<br>3.当需求中一定要将父类对象转换为子类对象时应该怎么办？<br> |- 使用Spring的BeanUtils.copyProperties去拷贝两个对象的属性<br>|- 使用JSON，将父类对象转换为JSON字符串，再将这个字符串转换为子类对象。<br>注意：这两种方式严格来说并不叫“转换”，只是为了解决上面问题的两种解决方案。</p>
+<p><strong>获得类中字段相关的方法</strong></p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>getField(String name)</td>
+<td>获得某个公有的字段对象</td>
+</tr>
+<tr>
+<td>getFields()</td>
+<td>获得所有公有的字段对象</td>
+</tr>
+<tr>
+<td>getDeclaredField(String name)</td>
+<td>获得某个字段对象</td>
+</tr>
+<tr>
+<td>getDeclaredFields()</td>
+<td>获得所有字段对象</td>
+</tr>
+</tbody></table>
+<p><strong>获得类中注解相关的方法</strong></p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>getAnnotation(Class<A> annotationClass)</td>
+<td>返回该类中与参数类型匹配的公有注解对象</td>
+</tr>
+<tr>
+<td><strong>获得类中构造器相关的方法</strong></td>
+<td></td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>getConstructor(Class…&lt;?&gt; parameterTypes)</td>
+<td>获得该类中与参数类型匹配的公有构造方法</td>
+</tr>
+<tr>
+<td>getConstructors()</td>
+<td>获得该类的所有公有构造方法</td>
+</tr>
+<tr>
+<td>getDeclaredConstructor(Class…&lt;?&gt; parameterTypes)</td>
+<td>获得该类中与参数类型匹配的构造方法</td>
+</tr>
+<tr>
+<td>getDeclaredConstructors()</td>
+<td>获得该类所有构造方法</td>
+</tr>
+</tbody></table>
+<p><strong>获得类中方法相关的方法</strong></p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>getMethod(String name, Class…&lt;?&gt; parameterTypes)</td>
+<td>获得该类某个公有的方法</td>
+</tr>
+<tr>
+<td>getMethods()</td>
+<td>获得该类所有公有的方法</td>
+</tr>
+<tr>
+<td>getDeclaredMethod(String name, Class…&lt;?&gt; parameterTypes)</td>
+<td>获得该类某个方法</td>
+</tr>
+<tr>
+<td>getDeclaredMethods()</td>
+<td>获得该类所有方法</td>
+</tr>
+</tbody></table>
+<p><strong>类中其他重要的方法</strong></p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>isAnnotation()</td>
+<td>如果是注解类型则返回true</td>
+</tr>
+<tr>
+<td>isAnnotationPresent(Class&lt;? extends Annotation&gt; annotationClass)</td>
+<td>如果是指定类型注解类型则返回true</td>
+</tr>
+<tr>
+<td>isArray()</td>
+<td>如果是一个数组类则返回true</td>
+</tr>
+<tr>
+<td>isEnum()</td>
+<td>如果是枚举类则返回true</td>
+</tr>
+<tr>
+<td>isInstance(Object obj)</td>
+<td>如果obj是该类的实例则返回true</td>
+</tr>
+<tr>
+<td>isInterface()</td>
+<td>如果是接口类则返回true</td>
+</tr>
+</tbody></table>
+<h2 id="Field"><a href="#Field" class="headerlink" title="Field"></a>Field</h2><p>Field代表类的成员变量。成员变量（字段）和成员属性是两个概念。<br>比如：当一个User类中有一个name变量，那么这个时候我们就说它有name这个字段。但是如果没有getName和setName这两个方法，那么这个类就没有name属性。反之，如果这个类拥有getAge和setAge这两个方法，不管有没有age字段，我们都认为它有age这个属性</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>get(Object obj)</td>
+<td>获得obj中对应的属性值</td>
+</tr>
+<tr>
+<td>set(Object obj, Object value)</td>
+<td>设置obj中对应属性值</td>
+</tr>
+<tr>
+<td>SetAccessible</td>
+<td>暴力反射，忽略访问权限修饰符</td>
+</tr>
+</tbody></table>
+<h2 id="Method"><a href="#Method" class="headerlink" title="Method"></a>Method</h2><p>Method代表类的方法（不包括构造方法）。</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>invoke(Object obj, Object… args)</td>
+<td>传递object对象及参数调用该对象对应的方法</td>
+</tr>
+<tr>
+<td>getName</td>
+<td>获取方法名</td>
+</tr>
+<tr>
+<td>SetAccessible</td>
+<td>暴力反射，忽略访问权限修饰符</td>
+</tr>
+</tbody></table>
+<p>Invoke方法的用处：SpringAOP在切面方法执行的前后进行某些操作，就是使用的invoke方法。</p>
+<h2 id="Constructor-用的比较少"><a href="#Constructor-用的比较少" class="headerlink" title="Constructor(用的比较少)"></a>Constructor(用的比较少)</h2><p>Constructor代表类的构造方法。</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>newInstance(Object… initargs)</td>
+<td>根据传递的参数创建类的对象</td>
+</tr>
+<tr>
+<td>Constructor类在实际开发中使用极少，几乎不会使用Constructor。</td>
+<td></td>
+</tr>
+<tr>
+<td>因为：Constructor违背了Java的一些思想，比如：私有构造不让用户去new对象；单例模式保证全局只有一个该类的实例。而Constructor则可以破坏这个规则</td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h2><blockquote>
+<p>一个小工具，可以帮我们创建任意类的对象，并且执行其中任意方法</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.jg.utils;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.Method;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">MethodUtils</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">MethodUtils</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 执行当前指定对象的指定方法</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> obj</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> methodName</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> params</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Object <span class="title">invokeMethod</span><span class="params">(Object obj, String methodName, Object... params)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">long</span> startTime = System.currentTimeMillis();</span><br><span class="line">        Class&lt;?&gt; objClass = obj.getClass();</span><br><span class="line">        System.out.println(<span class="string">"执行类："</span> + objClass.getName());</span><br><span class="line">        System.out.println(<span class="string">"方法："</span> + methodName);</span><br><span class="line">        System.out.println(<span class="string">"参数："</span> + params);</span><br><span class="line">        Object result = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            Method method;</span><br><span class="line">            <span class="keyword">if</span> (params.length &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                Class&lt;?&gt;[] classArr = <span class="keyword">new</span> Class[params.length];</span><br><span class="line">                Object[] valueArr = <span class="keyword">new</span> Object[params.length];</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; params.length; i++) &#123;</span><br><span class="line">                    classArr[i] = params[i].getClass();</span><br><span class="line">                    valueArr[i] = params[i];</span><br><span class="line">                &#125;</span><br><span class="line">                method = objClass.getDeclaredMethod(methodName, classArr);</span><br><span class="line">                method.setAccessible(<span class="keyword">true</span>);</span><br><span class="line">                result = method.invoke(obj, valueArr);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                method = objClass.getDeclaredMethod(methodName);</span><br><span class="line">                method.setAccessible(<span class="keyword">true</span>);</span><br><span class="line">                result = method.invoke(obj);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">long</span> endTime = System.currentTimeMillis();</span><br><span class="line">        System.out.println(<span class="string">"返回值："</span> + result);</span><br><span class="line">        System.out.println(<span class="string">"执行时间："</span> + (endTime - startTime));</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"toString方法执行了。。。"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="注解"><a href="#注解" class="headerlink" title="注解"></a>注解</h1><p>概念：注解就是说明程序的一个标识，给计算机看的。<br>注释：用文字描述程序，给程序员看的。<br>定义：也叫作元数据，是一种代码级别的说明。它是JDK1.5引入的一个特性，是一种特殊的接口。它可以声明在类、字段、方法、变量、参数、包等前面，作为一个描述去使用。</p>
+<p>作用分类：<br>编写文档：通过代码中标识的注解生成文档（Swagger）<br>代码分析：通过代码里的注解对代码进行分析（逻辑判断）<br>编译检查：通过代码里对应的注解让编译器实现基本的编译检查（Override，Deprecated，FunctionalInterface）</p>
+<p>JDK中预定义的一些注解<br>Override：检测该注解标识的方法是否继承自父类<br>Deprecated：标识方法、类、字段等已经过时，后续的版本可能会将其移除<br>SuppressWarnings：压制警告</p>
+<h2 id="自定义注解"><a href="#自定义注解" class="headerlink" title="自定义注解"></a>自定义注解</h2><h3 id="格式"><a href="#格式" class="headerlink" title="格式"></a>格式</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">@元注解</span><br><span class="line">Public <span class="meta">@interface</span> 注解名称 &#123;</span><br><span class="line">属性列表</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>本质：注解本质上是一个接口，该接口事实上默认继承自Annotation接口</p>
+<h3 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h3><p>事实上是接口中的抽象方法</p>
+<ol>
+<li>如果定义了属性，在使用属性的时候需要给属性赋值。</li>
+<li>如果只有一个属性需要赋值，并且这个属性名称是value，则可以省略value</li>
+<li>数组赋值时，需要使用{}包起来。如果数组中只有一个元素，则大括号可以省略<br>属性中的返回值类型有下列取值：</li>
+</ol>
+<p>基本数据类型</p>
+<ul>
+<li>String</li>
+<li>枚举</li>
+<li>注解</li>
+<li>以上类型的数组</li>
+</ul>
+<h3 id="元注解"><a href="#元注解" class="headerlink" title="元注解"></a>元注解</h3><p>用于描述注解的注解<br><code>@Target：</code>描述该注解作用范围</p>
+<p><code>ElementType取值：</code></p>
+<ul>
+<li><p><code>Type：</code>作用于类</p>
+</li>
+<li><p><code>METHOD：</code>作用于方法</p>
+</li>
+<li><p><code>FIELD：</code>作用于字段</p>
+</li>
+</ul>
+<p><code>@Retention：</code>描述注解被保留的阶段</p>
+<ul>
+<li><code>RetentionPolicy.RUNTIME：</code>当前描述的注解，会保留到class字节码文件中，并被jvm读取到</li>
+</ul>
+<p><code>@Documented：</code>描述注解是否被抽取到api文档中<br><code>@Inherited：</code>描述注解是否可以被继承</p>
+<h2 id="案例-1"><a href="#案例-1" class="headerlink" title="案例"></a>案例</h2><p>编写一个缓存注解，该注解用于缓存指定方法的返回值。</p>
+<p><strong>@Cache</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">    <span class="keyword">package</span> com.jg.annotation;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.lang.annotation.ElementType;</span><br><span class="line"><span class="keyword">import</span> java.lang.annotation.Retention;</span><br><span class="line"><span class="keyword">import</span> java.lang.annotation.RetentionPolicy;</span><br><span class="line"><span class="keyword">import</span> java.lang.annotation.Target;</span><br><span class="line"><span class="keyword">import</span> java.util.concurrent.TimeUnit;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Target</span>(&#123;ElementType.METHOD&#125;)</span><br><span class="line"><span class="meta">@Retention</span>(RetentionPolicy.RUNTIME)</span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> Cache &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 缓存的key</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function">String <span class="title">key</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 缓存时间</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">long</span> <span class="title">cacheTime</span><span class="params">()</span> <span class="keyword">default</span> 10</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 缓存时间单位</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function">TimeUnit <span class="title">timeUnit</span><span class="params">()</span> <span class="keyword">default</span> TimeUnit.MINUTES</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>CacheUtils</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.jg.utils;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.jg.annotation.Cache;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.Method;</span><br><span class="line"><span class="keyword">import</span> java.util.Map;</span><br><span class="line"><span class="keyword">import</span> java.util.concurrent.ConcurrentHashMap;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">CacheUtils</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * HashMap是线程不安全的，这里应该用ConcurrentHashMap</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Map&lt;String, Object&gt; cacheMap = <span class="keyword">new</span> ConcurrentHashMap&lt;&gt;();</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">CacheUtils</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 执行当前指定对象的指定方法</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> obj</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> methodName</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> params</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Object <span class="title">invokeMethod</span><span class="params">(Object obj, String methodName, Object... params)</span> </span>&#123;</span><br><span class="line">        Class&lt;?&gt; objClass = obj.getClass();</span><br><span class="line">        Object result = <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            Method method;</span><br><span class="line">            <span class="keyword">if</span> (params.length &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                Class&lt;?&gt;[] classArr = <span class="keyword">new</span> Class[params.length];</span><br><span class="line">                Object[] valueArr = <span class="keyword">new</span> Object[params.length];</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; params.length; i++) &#123;</span><br><span class="line">                    classArr[i] = params[i].getClass();</span><br><span class="line">                    valueArr[i] = params[i];</span><br><span class="line">                &#125;</span><br><span class="line">                method = objClass.getDeclaredMethod(methodName, classArr);</span><br><span class="line"></span><br><span class="line">                <span class="comment">// 获取缓存注解</span></span><br><span class="line">                Cache cacheAnnotation = method.getAnnotation(Cache<span class="class">.<span class="keyword">class</span>)</span>;</span><br><span class="line">                <span class="comment">// 先判断注解是否为空</span></span><br><span class="line">                <span class="keyword">if</span> (cacheAnnotation != <span class="keyword">null</span>) &#123;</span><br><span class="line">                    <span class="comment">// 方法有参数，以第一个参数为小key。</span></span><br><span class="line">                    Object paramsKey = params[<span class="number">0</span>];</span><br><span class="line">                    <span class="comment">// 获取大key</span></span><br><span class="line">                    String key = cacheAnnotation.key();</span><br><span class="line">                    <span class="comment">// 拼接key</span></span><br><span class="line">                    String cacheKey = key + <span class="string">"."</span> + paramsKey;</span><br><span class="line">                    <span class="comment">// 获取缓存</span></span><br><span class="line">                    Object cacheValue = cacheMap.get(cacheKey);</span><br><span class="line">                    <span class="comment">// 判断缓存是否存在，如果存在，直接返回缓存的值</span></span><br><span class="line">                    <span class="keyword">if</span> (cacheValue != <span class="keyword">null</span>) &#123;</span><br><span class="line">                        <span class="keyword">return</span> cacheValue;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                method.setAccessible(<span class="keyword">true</span>);</span><br><span class="line">                result = method.invoke(obj, valueArr);</span><br><span class="line">                <span class="comment">// 方法执行完了，将数据放入到缓存中</span></span><br><span class="line">                <span class="keyword">if</span>(cacheAnnotation!=<span class="keyword">null</span>) &#123;</span><br><span class="line">                    <span class="comment">// 获取key</span></span><br><span class="line">                    <span class="comment">// 方法有参数，以第一个参数为小key。</span></span><br><span class="line">                    Object paramsKey = params[<span class="number">0</span>];</span><br><span class="line">                    <span class="comment">// 获取大key</span></span><br><span class="line">                    String key = cacheAnnotation.key();</span><br><span class="line">                    <span class="comment">// 拼接key</span></span><br><span class="line">                    String cacheKey = key + <span class="string">"."</span> + paramsKey;</span><br><span class="line">                    cacheMap.put(cacheKey, result);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                method = objClass.getDeclaredMethod(methodName);</span><br><span class="line">                <span class="comment">// 获取缓存注解</span></span><br><span class="line">                Cache cacheAnnotation = method.getAnnotation(Cache<span class="class">.<span class="keyword">class</span>)</span>;</span><br><span class="line">                <span class="comment">// 先判断注解是否为空</span></span><br><span class="line">                <span class="keyword">if</span> (cacheAnnotation != <span class="keyword">null</span>) &#123;</span><br><span class="line">                    <span class="comment">// 获取大key</span></span><br><span class="line">                    String key = cacheAnnotation.key();</span><br><span class="line">                    <span class="comment">// 获取缓存</span></span><br><span class="line">                    Object cacheValue = cacheMap.get(key);</span><br><span class="line">                    <span class="comment">// 判断缓存是否存在，如果存在，直接返回缓存的值</span></span><br><span class="line">                    <span class="keyword">if</span> (cacheValue != <span class="keyword">null</span>) &#123;</span><br><span class="line">                        <span class="keyword">return</span> cacheValue;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                method.setAccessible(<span class="keyword">true</span>);</span><br><span class="line">                result = method.invoke(obj);</span><br><span class="line">                <span class="comment">// 方法执行完了，将数据放入到缓存中</span></span><br><span class="line">                <span class="keyword">if</span>(cacheAnnotation!=<span class="keyword">null</span>) &#123;</span><br><span class="line">                    String key = cacheAnnotation.key();</span><br><span class="line">                    cacheMap.put(key, result);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>Controller</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 根据id获取用户</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> index</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Cache</span>(key = <span class="string">"user"</span>)</span><br><span class="line"><span class="function"><span class="keyword">public</span> User <span class="title">getUserById</span><span class="params">(Integer index)</span> </span>&#123;</span><br><span class="line">    System.out.println(<span class="string">"获取用户方法被调用，id为："</span> + index);</span><br><span class="line">    <span class="keyword">return</span> users[index];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>Test</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testCache</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">    UserController userController = <span class="keyword">new</span> UserController();</span><br><span class="line"></span><br><span class="line">    Object user1 = CacheUtils.invokeMethod(userController, <span class="string">"getUserById"</span>, <span class="number">0</span>);</span><br><span class="line">    Object user2 = CacheUtils.invokeMethod(userController, <span class="string">"getUserById"</span>, <span class="number">0</span>);</span><br><span class="line">    System.out.println(user1);</span><br><span class="line">    System.out.println(user2);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>结果</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">获取用户方法被调用，id为：0</span><br><span class="line">User&#123;name&#x3D;&#39;张三&#39;, age&#x3D;23, idNumber&#x3D;&#39;123&#39;&#125;</span><br><span class="line">User&#123;name&#x3D;&#39;张三&#39;, age&#x3D;23, idNumber&#x3D;&#39;123&#39;&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<hr>
+<p><strong>文章来源：</strong><br><a href="https://space.bilibili.com/12327895?spm_id_from=333.788.b_765f7570696e666f.1" target="_blank" rel="noopener">稽哥的视频学习总结</a></p>
+]]></content>
+      <categories>
+        <category>Java基础</category>
+      </categories>
+      <tags>
+        <tag>反射</tag>
+        <tag>注解</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>代理模式</title>
     <url>/2020/03/24/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/</url>
     <content><![CDATA[<p>代理模式</p>
