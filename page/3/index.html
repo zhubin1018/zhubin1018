@@ -190,7 +190,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zhubin1018.github.io/2020/03/17/shiro/">
+    <link itemprop="mainEntityOfPage" href="https://zhubin1018.github.io/2020/03/24/Java%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://gitee.com/bin1018/MaYunImages/raw/master/img/20200302123325.jpg">
@@ -204,7 +204,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2020/03/17/shiro/" class="post-title-link" itemprop="url">shiro</a>
+            <a href="/2020/03/24/Java%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D/" class="post-title-link" itemprop="url">Java内存分配</a>
         </h1>
 
         <div class="post-meta">
@@ -213,16 +213,10 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2020-03-17 09:22:18" itemprop="dateCreated datePublished" datetime="2020-03-17T09:22:18+08:00">2020-03-17</time>
+              <time title="创建时间：2020-03-24 11:55:14 / 修改时间：18:31:54" itemprop="dateCreated datePublished" datetime="2020-03-24T11:55:14+08:00">2020-03-24</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-03-24 11:52:46" itemprop="dateModified" datetime="2020-03-24T11:52:46+08:00">2020-03-24</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -242,8 +236,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2020/03/17/shiro/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/03/17/shiro/" itemprop="commentCount"></span>
+    <a title="valine" href="/2020/03/24/Java%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/03/24/Java%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -253,14 +247,14 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>27k</span>
+              <span>2.2k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="fa fa-clock-o"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>24 分钟</span>
+              <span>2 分钟</span>
             </span>
 
         </div>
@@ -272,137 +266,20 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="Shiro概述"><a href="#Shiro概述" class="headerlink" title="Shiro概述"></a>Shiro概述</h1><p>Apache Shiro 是Java 的一个安全框架。Shiro 可以非常容易的开发出足够好的应用，其不仅可以用在JavaSE 环境，也可以用在JavaEE 环境。Shiro 可以帮助我们完成：认证、授权、加密、会话管理、与Web 集成、缓存等。</p>
-<p>在概念层，Shiro 架构包含三个主要的理念：Subject,SecurityManager和 Realm。下面的图展示了这些组件如何相互作用，我们将在下面依次对其进行描述<br><img src="https://gitee.com/bin1018/MaYunImages/raw/master/img/20200317110538.png" alt=""></p>
-<ul>
-<li>Subject：当前用户，Subject 可以是一个人，但也可以是第三方服务、守护进程帐户、时钟守护任务或者其它–当前和软件交互的任何事件。</li>
-<li>SecurityManager：管理所有Subject，SecurityManager 是 Shiro 架构的核心，配合内部安全组件共同组成安全伞。Realms：用于进行权限信息的验证，我们自己实现。</li>
-<li>Realm 本质上是一个特定的安全 DAO：它封装与数据源连接的细节，得到Shiro 所需的相关的数据。在配置 Shiro 的时候，你必须指定至少一个Realm 来实现认证（authentication）和/或授权（authorization）。</li>
-</ul>
-<p>我们需要实现Realms的Authentication 和 Authorization。其中 Authentication 是用来验证用户身份，Authorization 是授权访问控制，用于对用户进行的操作授权，证明该用户是否允许进行当前操作，如访问某个链接，某个资源文件等。也可继承AuthenticatingRealm，其包含身份和权限的认证。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/03/17/shiro/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-<div>
-
-</div>
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zhubin1018.github.io/2020/03/11/SpringBoot/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://gitee.com/bin1018/MaYunImages/raw/master/img/20200302123325.jpg">
-      <meta itemprop="name" content="朱彬">
-      <meta itemprop="description" content="Knowledge is power">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ZhuBin">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/03/11/SpringBoot/" class="post-title-link" itemprop="url">SpringBoot</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-03-11 09:09:00" itemprop="dateCreated datePublished" datetime="2020-03-11T09:09:00+08:00">2020-03-11</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-03-24 11:52:49" itemprop="dateModified" datetime="2020-03-24T11:52:49+08:00">2020-03-24</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%90%8E%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">后端</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2020/03/11/SpringBoot/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/03/11/SpringBoot/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>27k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>24 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="SpringBoot入门"><a href="#SpringBoot入门" class="headerlink" title="SpringBoot入门"></a>SpringBoot入门</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p><strong>SpringBoot之前</strong><br>J2EE笨重的开发、繁多的配置、低下的开发效率、 复杂的部署流程、第三方技术集成难度大。</p>
-<p><strong>SpringBoot的优点</strong></p>
+          <p><strong>Java内存分配</strong></p>
+<blockquote>
 <ol>
-<li>快速创建独立运行的Spring项目以及与主流框架集成</li>
-<li>使用嵌入式的Servlet容器，应用无需打成WAR包</li>
-<li>starters自动依赖与版本控制</li>
-<li>大量的自动配置，简化开发，也可修改默认值</li>
-<li>无需配置XML，无代码生成，开箱即用</li>
-<li>准生产环境的运行时应用监控</li>
-<li>与云计算的天然集成
+<li>寄存器：JVM内部虚拟寄存器，存取速度非常快，程序不可控制。</li>
+<li>栈：存放基本类型的数据和对象的引用，但对象本身不存放在栈中，而是存放在堆中。</li>
+<li>堆：存放new出来的对象，注意创建出来的对象只包含各自的成员变量，不包括成员方法。&gt;</li>
+<li>常量池：存放常量，如基本类型的包装类(Integer、Short)和String,注意常量池位于堆中。</li>
+<li>代码段：用来存放从硬盘上读取的源程序代码。</li>
+<li>数据段：用来存放static修饰的静态成员。<br><img src="https://gitee.com/bin1018/MaYunImages/raw/master/img/20200310183722.png" alt=""></li>
+</ol>
+</blockquote>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2020/03/11/SpringBoot/#more" rel="contents">
+              <a class="btn" href="/2020/03/24/Java%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -428,7 +305,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zhubin1018.github.io/2020/03/06/Nginx/">
+    <link itemprop="mainEntityOfPage" href="https://zhubin1018.github.io/2020/03/21/FastDFS%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://gitee.com/bin1018/MaYunImages/raw/master/img/20200302123325.jpg">
@@ -442,7 +319,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2020/03/06/Nginx/" class="post-title-link" itemprop="url">Nginx</a>
+            <a href="/2020/03/21/FastDFS%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/" class="post-title-link" itemprop="url">FastDFS文件上传</a>
         </h1>
 
         <div class="post-meta">
@@ -452,14 +329,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2020-03-06 19:33:46" itemprop="dateCreated datePublished" datetime="2020-03-06T19:33:46+08:00">2020-03-06</time>
+              <time title="创建时间：2020-03-21 22:56:08" itemprop="dateCreated datePublished" datetime="2020-03-21T22:56:08+08:00">2020-03-21</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-03-24 11:52:48" itemprop="dateModified" datetime="2020-03-24T11:52:48+08:00">2020-03-24</time>
+                <time title="修改时间：2020-03-24 17:42:54" itemprop="dateModified" datetime="2020-03-24T17:42:54+08:00">2020-03-24</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -480,8 +357,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2020/03/06/Nginx/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/03/06/Nginx/" itemprop="commentCount"></span>
+    <a title="valine" href="/2020/03/21/FastDFS%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/03/21/FastDFS%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -491,7 +368,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>7.5k</span>
+              <span>7.7k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -510,10 +387,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="Nginx简介"><a href="#Nginx简介" class="headerlink" title="Nginx简介"></a>Nginx简介</h1><p>&#160; &#160; &#160; &#160; Nginx (engine x) 是一个高性能的HTTP和反向代理web服务器，同时也提供了IMAP/POP3/SMTP服务。Nginx是由伊戈尔·赛索耶夫为俄罗斯访问量第二的Rambler.ru站点（俄文：Рамблер）开发的，第一个公开版本0.1.0发布于2004年10月4日。<br>&#160; &#160; &#160; &#160; 其将源代码以类BSD许可证的形式发布，因它的稳定性、丰富的功能集、示例配置文件和低系统资源的消耗而闻名。2011年6月1日，nginx 1.0.4发布。<br>&#160; &#160; &#160; &#160; Nginx是一款轻量级的Web 服务器/反向代理服务器及电子邮件（IMAP/POP3）代理服务器，在BSD-like 协议下发行。其特点是占有内存少，并发能力强，事实上nginx的并发能力在同类型的网页服务器中表现较好，中国大陆使用nginx网站用户有：百度、京东、新浪、网易、腾讯、淘宝等。<br>&#160; &#160; &#160; &#160; Nginx专门为性能优化而开发，占内存少，并发能力强，能经受高负载的考验，支持高达50 000个并发连接数。</p>
+          <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>FastDFS是一个开源的轻量级分布式文件系统，它对文件进行管理，功能包括：文件存储、文件同步、文件访问（文件上传、文件下载）等，解决了大容量存储和负载均衡的问题。特别适合以中小文件（建议范围：4KB &lt; file_size &lt;500MB），如相册网站、视频网站等等</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2020/03/06/Nginx/#more" rel="contents">
+              <a class="btn" href="/2020/03/21/FastDFS%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -539,7 +416,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zhubin1018.github.io/2020/03/06/PicGo/">
+    <link itemprop="mainEntityOfPage" href="https://zhubin1018.github.io/2020/03/20/Markdown%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://gitee.com/bin1018/MaYunImages/raw/master/img/20200302123325.jpg">
@@ -553,7 +430,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2020/03/06/PicGo/" class="post-title-link" itemprop="url">PicGo</a>
+            <a href="/2020/03/20/Markdown%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97/" class="post-title-link" itemprop="url">Markdown入门指南</a>
         </h1>
 
         <div class="post-meta">
@@ -564,7 +441,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-03-06 12:00:32 / 修改时间：13:14:55" itemprop="dateCreated datePublished" datetime="2020-03-06T12:00:32+08:00">2020-03-06</time>
+              <time title="创建时间：2020-03-20 22:29:57 / 修改时间：22:38:23" itemprop="dateCreated datePublished" datetime="2020-03-20T22:29:57+08:00">2020-03-20</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -572,7 +449,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%9B%BE%E5%BA%8A/" itemprop="url" rel="index"><span itemprop="name">图床</span></a>
+                  <a href="/categories/Markdown/" itemprop="url" rel="index"><span itemprop="name">Markdown</span></a>
                 </span>
             </span>
 
@@ -585,8 +462,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2020/03/06/PicGo/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/03/06/PicGo/" itemprop="commentCount"></span>
+    <a title="valine" href="/2020/03/20/Markdown%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/03/20/Markdown%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -596,7 +473,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>804</span>
+              <span>859</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -615,10 +492,14 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>&#160; &#160; &#160; &#160; 对于很多程序员来说都有写博客的习惯，之前一直喜欢用印象笔记来写东西然后发布到自己的CSDN账号。不过发现一个问题，印象笔记生成的图片链接到CSDN上无法使用，显示私密链接。而且很多程序员都有自己的个人博客，对于博客来说不可避免有不少图片，会严重影响博客的加载速度，于是很多程序员都喜欢用图床技术。<br>&#160; &#160; &#160; &#160; 为了解决这个问题，可以把自己图片放到图床上去，这样就可以共用。可以直接在聚合图床：<a href="https://www.superbed.cn" target="_blank" rel="noopener">https://www.superbed.cn</a>，上传自己的图片获得链接。可是有弊端，链接可能会失效，之前阅读别人博客，会发现很多博客图片失效。对于程序员来说博客图片必不可少，若多年前文章中图片链接突然失效，很难恢复，因为自己很难记得这些图的内容了。当然聚合图床的会员可以避免这种情况。很贵，不推荐。求人不如求己，我们可以用github构造一个图床，由于github外网的原因，图片加载会很慢，github能做到的事情码云肯定可以做，说了这么多，现在就讲如何用PicGo+码云来构建自己的图床。所有操作之前先在自己电脑内下载node.js。</p>
+          <h1 id="设置分级标题"><a href="#设置分级标题" class="headerlink" title="设置分级标题"></a>设置分级标题</h1><p><strong>语法示例</strong>：</p>
+<blockquote>
+<p># 一级标题<br>## 二级标题<br>### 三级标题<br>#### 四级标题<br>##### 五级标题<br>###### 六级标题</p>
+</blockquote>
+<hr>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2020/03/06/PicGo/#more" rel="contents">
+              <a class="btn" href="/2020/03/20/Markdown%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -644,7 +525,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zhubin1018.github.io/2020/03/02/Redis/">
+    <link itemprop="mainEntityOfPage" href="https://zhubin1018.github.io/2020/03/20/HashMap/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://gitee.com/bin1018/MaYunImages/raw/master/img/20200302123325.jpg">
@@ -658,7 +539,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2020/03/02/Redis/" class="post-title-link" itemprop="url">Redis</a>
+            <a href="/2020/03/20/HashMap/" class="post-title-link" itemprop="url">HashMap</a>
         </h1>
 
         <div class="post-meta">
@@ -668,14 +549,128 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2020-03-02 22:30:38" itemprop="dateCreated datePublished" datetime="2020-03-02T22:30:38+08:00">2020-03-02</time>
+              <time title="创建时间：2020-03-20 13:14:09" itemprop="dateCreated datePublished" datetime="2020-03-20T13:14:09+08:00">2020-03-20</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-03-24 11:52:47" itemprop="dateModified" datetime="2020-03-24T11:52:47+08:00">2020-03-24</time>
+                <time title="修改时间：2020-03-24 17:42:51" itemprop="dateModified" datetime="2020-03-24T17:42:51+08:00">2020-03-24</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">Java基础</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/03/20/HashMap/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/03/20/HashMap/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.2k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="基本介绍"><a href="#基本介绍" class="headerlink" title="基本介绍"></a>基本介绍</h1><p>HashMap基于哈希表的Map接口实现，是以key-value存储形式存在，即主要用来存放键值对。HashMap 的实现不是同步的，这意味着它不是线程安全的。它的key、value都可以为null。此外，HashMap中的映射不是有序的。</p>
+<p>JDK1.8 之前 HashMap 由 数组+链表 组成的，数组是 HashMap 的主体，链表则是主要为了解决哈希冲突(两个对象调用的hashCode方法计算的哈希码值一致导致计算的数组索引值相同)。JDK8之后，当链表长度大于阈值（或者红黑树的边界值，默认为 8）并且当前数组的<strong>长度大于64时</strong>，此时此索引位置上的所有数据改为使用红黑树存储。</p>
+<p>补充：将链表转换成红黑树前会判断，即使阈值大于8，但是数组长度小于64，此时并不会将链表变为红黑树。而是选择进行数组扩容。<br>当阈值小于6时红黑树会变回链表。</p>
+<p>当然虽然增了红黑树作为底层数据结构，结构变得复杂了，但是阈值大于8并且数组长度大于64时，链表转换为红黑树时，效率也变的相对更高效。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/03/20/HashMap/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+<div>
+
+</div>
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://zhubin1018.github.io/2020/03/20/spring%E4%BA%8B%E5%8A%A1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://gitee.com/bin1018/MaYunImages/raw/master/img/20200302123325.jpg">
+      <meta itemprop="name" content="朱彬">
+      <meta itemprop="description" content="Knowledge is power">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZhuBin">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/03/20/spring%E4%BA%8B%E5%8A%A1/" class="post-title-link" itemprop="url">spring事务</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-03-20 12:26:49" itemprop="dateCreated datePublished" datetime="2020-03-20T12:26:49+08:00">2020-03-20</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-03-24 11:52:45" itemprop="dateModified" datetime="2020-03-24T11:52:45+08:00">2020-03-24</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -696,8 +691,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2020/03/02/Redis/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/03/02/Redis/" itemprop="commentCount"></span>
+    <a title="valine" href="/2020/03/20/spring%E4%BA%8B%E5%8A%A1/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/03/20/spring%E4%BA%8B%E5%8A%A1/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -707,14 +702,14 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>19k</span>
+              <span>3.2k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="fa fa-clock-o"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>17 分钟</span>
+              <span>3 分钟</span>
             </span>
 
         </div>
@@ -726,12 +721,19 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="NoSql"><a href="#NoSql" class="headerlink" title="NoSql"></a>NoSql</h1><p>&#160; &#160; &#160; &#160;Redis属于NoSql里面的一个具体的技术</p>
-<h2 id="NoSql入门和概述"><a href="#NoSql入门和概述" class="headerlink" title="NoSql入门和概述"></a>NoSql入门和概述</h2><p>&#160; &#160;<strong>入门概述</strong></p>
-<p>&#160; &#160; &#160; &#160;在90年代，一个网站的访问量一般都不大，用单个数据库完全可以轻松应付。在那个时候，更多的都是静态网页，动态交互类型的网站不多。随着现在互联网用户剧增, 如果同时大量语句进行, MySQL将无法应付。数据量的剧增,会存在一个机器放不下, 数据的索引也存放不下。同时访问量的增加, MySQL就开始出现性能问题。为了提高性能, 开始利用缓存, 减少MySQL性能消耗。</p>
+          <h1 id="一-基本配置"><a href="#一-基本配置" class="headerlink" title="一.基本配置"></a>一.基本配置</h1><h2 id="配置jdbc-properties外部属性文件"><a href="#配置jdbc-properties外部属性文件" class="headerlink" title="配置jdbc.properties外部属性文件"></a>配置jdbc.properties外部属性文件</h2><figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">jdbc.driverClass</span>=<span class="string">com.mysql.jdbc.Driver</span></span><br><span class="line"><span class="meta">jdbc.url</span>=<span class="string">jdbc:mysql://127.0.0.1:3306/spring2</span></span><br><span class="line"><span class="meta">jdbc.user</span>=<span class="string">root</span></span><br><span class="line"><span class="meta">jdbc.password</span>=<span class="string">123456</span></span><br></pre></td></tr></table></figure>
+<h2 id="xml文件配置"><a href="#xml文件配置" class="headerlink" title="xml文件配置"></a>xml文件配置</h2><ul>
+<li><strong><!--使用基于注解的方式实现Spring的声明式事务--></strong></li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">context:component-scan</span> <span class="attr">base-package</span>=<span class="string">"com.bin.spring2"</span>&gt;</span><span class="tag">&lt;/<span class="name">context:component-scan</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong><!--导入外部的属性文件--></strong> </li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">context:property-placeholder</span> <span class="attr">location</span>=<span class="string">"classpath:jdbc.properties"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2020/03/02/Redis/#more" rel="contents">
+              <a class="btn" href="/2020/03/20/spring%E4%BA%8B%E5%8A%A1/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -757,7 +759,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -825,20 +827,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-count">21</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-count">23</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -894,13 +896,13 @@
       <i class="fa fa-area-chart"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">118k</span>
+    <span title="站点总字数">123k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">1:47</span>
+    <span title="站点阅读时长">1:52</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.2.0
   </div>
